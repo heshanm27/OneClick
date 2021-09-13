@@ -4,6 +4,7 @@
       <%@page import="java.util.ArrayList"%>
     <%@page import="java.sql.Blob"%>
 <%@page import="java.io.OutputStream"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +30,7 @@
   
      <nav class="justify-content-center navbar bg-dark " style="height: 250px; width: 100%;" >
    
-        <a class="navbarbrand "><img src="logo.png" class="me-5" id="logo" style="border-radius: 50%; left: 500px;"></a>
+        <a class="navbarbrand "><img src="<%=request.getContextPath()%>/img/logo.png" class="me-5" id="logo" style="border-radius: 50%; left: 500px;"></a>
         
         <h1 class="justify-content-center me-5" style="color: white;">One click</h1>
 
@@ -85,35 +86,47 @@
         <div class="container-fluid text-center h1">
 
             <h1 class="text-primary">Login</h1>
-           <h3> My name is ${isTrue}</h3>
+      
+                
            
-           
-           
-           
-.<% String name = (String) request.getAttribute("isTrue"); 
+<% String name = (String) request.getAttribute("isTrue"); 
 
 
-if(name == "hari"){
+if(name == "used"){
 	
 %>
 
-    <div class="alert alert-danger" role="alert">
-  A simple danger alert with Give it a click if you like.
+    <div class="alert alert-danger fs-4" role="alert">
+Entered Email Already have A Account Please Use Email To Login  
+</div>
+
+
+<% }%>
+
+<% String error = (String) request.getAttribute("loginFaild"); 
+
+
+if(error == "OK"){
+	
+%>
+
+    <div class="alert alert-danger fs-4" role="alert">
+Wrong Password Or Email Please Try Again 
 </div>
 
 
 <% }%>
      
         </div>
-        <form>
+        <form action="login" method="post">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label" required>Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="loginEmail">
               <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label" required>Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <input type="password" class="form-control" id="exampleInputPassword1" name="LoginName">
             </div>
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">

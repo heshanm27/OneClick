@@ -38,7 +38,7 @@ public class UserServelet extends HttpServlet {
 		
 		boolean isTrue = false;
 		
-		String nsame= "hari";
+		String nsame= "used";
 		isTrue = UserDbUtill.CreateAccount(name, email, pass);
 		
 	

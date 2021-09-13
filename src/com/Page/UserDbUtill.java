@@ -15,6 +15,62 @@ public class UserDbUtill {
 	
 	
 	
+	public static boolean validate(String email,String Password){
+		
+		boolean valid =false;
+		
+		ArrayList<User> user = new ArrayList<>();
+		
+		
+		try {
+			con = DBConnection.getConnetion();
+			stmt = con.createStatement();
+			
+			
+			String sql="select * from user where Email='"+email+"' and Password = '"+Password+"'";
+			
+			ResultSet rs= stmt.executeQuery(sql);
+			
+			if(rs.next()) {
+				
+				int id = rs.getInt(1);
+				String Name =rs.getString(2);
+				String Email = rs.getString(3);
+				String Pass =rs.getString(4);
+				
+				
+				User us = new User(id,Name,Email,Pass);
+				
+				user.add(us);
+				
+				if(Email.equals(email)  && Pass.equals(Password)) {
+					
+					valid =true;
+					
+				}
+			}
+			else {
+				
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		return valid;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 	public static boolean CreateAccount(String name,String email,String Password) {
 		
@@ -67,6 +123,15 @@ public class UserDbUtill {
 		return checkemail;
 		
 	}
+
+
+
+
+
+
+
+
+
 	
 	
 	
