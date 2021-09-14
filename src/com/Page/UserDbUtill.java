@@ -15,11 +15,11 @@ public class UserDbUtill {
 	
 	
 	
-	public static boolean validate(String email,String Password){
+	public static User Loginvalidate(String email,String Password){
 		
-		boolean valid =false;
+		User user = null;
 		
-		ArrayList<User> user = new ArrayList<>();
+		
 		
 		
 		try {
@@ -29,28 +29,15 @@ public class UserDbUtill {
 			
 			String sql="select * from user where Email='"+email+"' and Password = '"+Password+"'";
 			
-			ResultSet rs= stmt.executeQuery(sql);
+			rs= stmt.executeQuery(sql);
 			
 			if(rs.next()) {
 				
-				int id = rs.getInt(1);
-				String Name =rs.getString(2);
-				String Email = rs.getString(3);
-				String Pass =rs.getString(4);
-				
-				
-				User us = new User(id,Name,Email,Pass);
-				
-				user.add(us);
-				
-				if(Email.equals(email)  && Pass.equals(Password)) {
-					
-					valid =true;
-					
-				}
-			}
-			else {
-				
+				user  = new User();
+				user.setUserID(rs.getInt(1));
+				user.setName(rs.getString(2));
+				user.setEmail(rs.getString(3));
+				user.setPassword(rs.getString(4));
 			}
 			
 		} catch (SQLException e) {
@@ -61,7 +48,7 @@ public class UserDbUtill {
 		
 		
 		
-		return valid;
+		return user;
 	}
 	
 	

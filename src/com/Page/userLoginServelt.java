@@ -2,6 +2,8 @@ package com.Page;
 
 import java.io.IOException;
 
+
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -40,13 +42,13 @@ public class userLoginServelt extends HttpServlet {
 		String pass = request.getParameter("LoginName");
 		
 		
-		 Boolean result =UserDbUtill.validate(email, pass);
+		 User user =UserDbUtill.Loginvalidate(email, pass);
 		
 		
-		if(result == true) {
+		if(user != null) {
 			
 			HttpSession  session = request.getSession();
-			session.setAttribute("email", email);
+			session.setAttribute("root", user);
 			RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
 			dis.forward(request, response);
 		}

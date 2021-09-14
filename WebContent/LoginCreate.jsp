@@ -4,6 +4,19 @@
       <%@page import="java.util.ArrayList"%>
     <%@page import="java.sql.Blob"%>
 <%@page import="java.io.OutputStream"%>
+  <%@page import="com.Page.*"%>
+
+   <%
+   
+     User root = (User) request.getSession().getAttribute("root");
+    
+    if(root != null){    
+    	request.setAttribute("root", root);
+    	response.sendRedirect("index.jsp");
+    	
+    }
+    %>
+    
 
 <!DOCTYPE html>
 <html>
@@ -27,43 +40,7 @@
 <body>
   
 
-  
-     <nav class="justify-content-center navbar bg-dark " style="height: 250px; width: 100%;" >
-   
-        <a class="navbarbrand "><img src="<%=request.getContextPath()%>/img/logo.png" class="me-5" id="logo" style="border-radius: 50%; left: 500px;"></a>
-        
-        <h1 class="justify-content-center me-5" style="color: white;">One click</h1>
-
-        <ul class="nav ms-5" >
-            <li class="nav-item bg-light" >
-              <a class="nav-link active" aria-current="page" href="#"><span><i class="material-icons">home</i>Home</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Sport Item</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"  >Electronic Accessories</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"  >Toys</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"  >Toys</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"  >Toys</a>
-              </li>
-          </ul>
-    
-       <div style="right:500px;">   
-            <button class="btn btn-primary navbtn me-5" style="width: 150px;" type="button"></span><i class="material-icons">shopping_cart</i></span>Cart</button>
-            <button class="btn btn-primary me-5 " style="width: 150px; "type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><span style="padding-right: 15px" ><i class="material-icons">login</i></span>Sign up</button>
-        </div> 
-        </div>
-    </nav>
+<%@include file="navbar.jsp"%>
 
 
 

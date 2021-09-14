@@ -7,6 +7,10 @@ public class User {
 	String Email;
 	String Password;
 	
+	public User() {
+		
+	}
+	
 	public User(int userID, String name, String email, String password) {
 		super();
 		UserID = userID;
