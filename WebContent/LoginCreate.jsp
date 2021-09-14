@@ -40,7 +40,7 @@
 <body>
   
 
-<%@include file="navbar.jsp"%>
+<%@include file="/includes/navbar.jsp"%>
 
 
 
@@ -156,8 +156,6 @@ Wrong Password Or Email Please Try Again
 </div>
 
 </div>
-
-
 
 </body>
 </html>

@@ -25,8 +25,8 @@
 <%@include file="/includes/head.jsp"%>
 </head>
 <body>
-<%@include file="navbar.jsp"%>
+<%@include file="/includes/navbar.jsp"%>
 
 <h1>Sucess</h1>
-
+<%@include file="/includes/Footer.jsp"%>
 </html>
