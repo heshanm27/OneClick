@@ -16,7 +16,7 @@
               <a class="nav-link" href="#">Sport Item</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"  >Electronic Accessories</a>
+              <a class="nav-link" href="Electronics"  >Electronic Accessories</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"  >Toys</a>
@@ -36,7 +36,7 @@
         	        <a class="btn btn-primary" href="Account.jsp" role="button"><span style="padding-right: 15px" ><i class="material-icons">account_circle</i></span><% out.println(root.getName());%></a>	
         
         		<%}else{ %>
-        		 <a class="btn btn-primary" href="Login" role="button"><span style="padding-right: 15px" ><i class="material-icons">login</i></span>Log In</a>
+        		 <a class="btn btn-primary" href="LoginCreate.jsp" role="button"><span style="padding-right: 15px" ><i class="material-icons">login</i></span>Log In</a>
         		<%} %>
         </div> 
         </div>

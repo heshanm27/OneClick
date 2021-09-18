@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class UserLogin
  */
-@WebServlet("/Login")
+@WebServlet("/Signup")
 public class UserServelet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -39,11 +39,13 @@ public class UserServelet extends HttpServlet {
 		boolean isTrue = false;
 		
 		String nsame= "used";
+		String done = "true";
 		isTrue = UserDbUtill.CreateAccount(name, email, pass);
 		
 	
 		if(isTrue == true) {
 			request.setAttribute("isTrue", isTrue);
+			request.setAttribute("done", done);
 			RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
 			dis.forward(request, response);
 			

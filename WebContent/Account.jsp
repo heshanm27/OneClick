@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
         <%@page import="com.Page.*"%>
+           <%@page import="java.util.ArrayList"%>
+    <%@page import="items.*"%>
+    <%@page import="java.sql.Blob"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +14,7 @@
 <body>
  <%
    
+ 
      User root = (User) request.getSession().getAttribute("root");
  if(root == null){    
 	 response.sendRedirect("LoginCreate.jsp");
@@ -18,6 +22,8 @@
  }
 
     %>
+    
+
 <%@include file="/includes/navbar.jsp"%>
    
 
@@ -45,7 +51,7 @@
           <div class="col-6 bg-light border border-5 " >
             <div class="row  ms-5 me-5  justify-content-center mt-5">
             <img src="<%=request.getContextPath()%>/img/Account/undraw_Throw_away_re_x60k.svg" alt="" width="200px" height="200px">
-            <button class="btn btn-primary mt-5 mb-5" data-bs-toggle="modal" data-bs-target="#Delete">Delete Items</button>
+           <a class="btn btn-primary mt-5" href="Update" role="button"><span style="padding-right: 15px" ><i class="material-icons">login</i></span>Delete</a>
             </div>
         </div>
 
@@ -219,18 +225,21 @@
 
                 <form class="row g-3">
                    <table class="table table-dark table-hover">
+                   
   							<tr>
-  							<th class="table-dark">1</th>
-  							<th class="table-dark">2</th>
-  							<th class="table-dark">3</th>
-  							<th class="table-dark">4</th>
+  							<th class="table-dark">itemId</th>
+  							<th class="table-dark">Item Name</th>
+  							<th class="table-dark">item Details</th>
+  							<th class="table-dark">Item Price</th>
   							</tr>
+                   
+   
   							<tr>
-  							<td class="table-dark">...</td>
-	 						<td class="table-dark">...</td>
- 							<td class="table-dark">...</td>
- 							<td class="table-dark">...</td>
+  						
 								</tr>
+								
+								
+	
 							</table>
                   </form>
 

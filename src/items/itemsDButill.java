@@ -1,4 +1,5 @@
-package com.Account;
+
+package items;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,14 +16,14 @@ import com.Page.*;
 
 
 import items.*;
-public class AccountDbUtill {
+public class itemsDButill {
 
 	
 	private static Connection con=null;
 	private static Statement stmt =null;
 	private static ResultSet rs =null;
 	
-	public  static List<Electronics> finditems(int cid) {
+	public  static List<Electronics> finditems() {
 		
 		ArrayList<Electronics> item = new ArrayList<Electronics>();
 		
@@ -34,11 +35,11 @@ public class AccountDbUtill {
 			
 			stmt = con.createStatement();
 			
-			String sql="select * from electronics where UID='"+cid+"'";
+			String sql="select * from electronics";
 			
 			rs= stmt.executeQuery(sql);
 			
-			if(rs.next()) {
+			while(rs.next()) {
 				
 				int i;
 				int id =rs.getInt(1);
@@ -77,7 +78,7 @@ public class AccountDbUtill {
 						e.printStackTrace();
 					}
 	            
-	                
+				}//for
 	                Electronics el = new Electronics();
 	                
 	                el.setItemID(id);
@@ -93,7 +94,7 @@ public class AccountDbUtill {
 	       
 	                
 	                
-				}//for
+			
 				
 				
 				

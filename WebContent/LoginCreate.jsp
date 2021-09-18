@@ -80,6 +80,20 @@ Entered Email Already have A Account Please Use Email To Login
 
 <% }%>
 
+<% String done = (String) request.getAttribute("done"); 
+
+
+if (done == "true"){
+	
+%>
+
+    <div class="alert alert-info fs-4" role="alert">
+ Account Successfully Created !!WelCome Buddy!!
+</div>
+
+
+<% }%>
+
 <% String error = (String) request.getAttribute("loginFaild"); 
 
 
@@ -95,7 +109,7 @@ Wrong Password Or Email Please Try Again
 <% }%>
      
         </div>
-        <form action="login" method="post">
+        <form action="userLogin" method="post">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label" required>Email address</label>
               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="loginEmail">
@@ -125,7 +139,7 @@ Wrong Password Or Email Please Try Again
         <div class="container-fluid text-center h1">
             <h1 class="text-primary">Create Account</h1>
         </div>
-        <form action="signup" method="post"> 
+        <form action="Signup" method="post"> 
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Name</label>
                 <input type="text" class="form-control" id="exampleInputPassword1" name="Name" required>
