@@ -32,8 +32,16 @@ public class LogOutServelt extends HttpServlet {
 		
 		if(request.getSession().getAttribute("root")!=null) {
 			request.getSession().removeAttribute("root");
-			response.sendRedirect("LoginCreate.jsp");
-		}else {
+			response.sendRedirect("LoginType.jsp");
+		}else if(request.getSession().getAttribute("root1") != null) {
+			request.getSession().removeAttribute("root1");
+			response.sendRedirect("LoginType.jsp");
+			
+		}
+		
+		
+		
+		else {
 			response.sendRedirect("index.jsp");
 		}
 		

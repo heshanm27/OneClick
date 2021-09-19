@@ -5,6 +5,7 @@
     <%@page import="items.*"%>
     <%@page import="java.sql.Blob"%>
         <%@page import="com.Page.*"%>
+         <%@page import="com.Seller.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +15,7 @@
 </head>
 <body>
  <%
-   
+ Seller root1 = (Seller) request.getSession().getAttribute("root1");
  
      User root = (User) request.getSession().getAttribute("root");
  if(root == null){    

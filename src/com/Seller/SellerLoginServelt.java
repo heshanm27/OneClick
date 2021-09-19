@@ -1,8 +1,6 @@
-package com.Page;
+package com.Seller;
 
 import java.io.IOException;
-
-
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,17 +10,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.Page.User;
+import com.Page.UserDbUtill;
+
 /**
- * Servlet implementation class userLogin
+ * Servlet implementation class SellerServelt
  */
-@WebServlet("/userLogin")
-public class userLoginServelt extends HttpServlet {
+@WebServlet("/SellerLogin")
+public class SellerLoginServelt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public userLoginServelt() {
+    public SellerLoginServelt() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,25 +31,21 @@ public class userLoginServelt extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		
 		String email = request.getParameter("loginEmail");
 		String pass = request.getParameter("LoginName");
 		
 		
-		 User user =UserDbUtill.Loginvalidate(email, pass);
+		 Seller user =SellerDbUtill.Login(email, pass);
 		
 		
 		if(user != null) {
 			
 			HttpSession  session = request.getSession();
-			session.setAttribute("root", user);
+			session.setAttribute("root1", user);
 			RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
 			dis.forward(request, response);
 		}
@@ -56,10 +53,12 @@ public class userLoginServelt extends HttpServlet {
 			
 			String done = "OK";
 			request.setAttribute("loginFaild",done );
-			RequestDispatcher dis2 = request.getRequestDispatcher("UserLoginCreate.jsp");
+			RequestDispatcher dis2 = request.getRequestDispatcher("SellerLoginCreate.jsp");
 			dis2.forward(request, response);
 		
 		}
+		
+		
 		
 	}
 

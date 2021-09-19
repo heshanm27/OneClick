@@ -3,8 +3,9 @@
     <%@ page session="true" %>
     <%@page import="com.Page.*"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+     <%@page import="com.Seller.*"%>
     <%
-   
+    Seller root1 = (Seller) request.getSession().getAttribute("root1");
      User root = (User) request.getSession().getAttribute("root");
     
     if(root != null){    
@@ -12,7 +13,7 @@
     	
     }
     else{
-    	response.sendRedirect("LoginCreate.jsp");
+
     }
     
     %>

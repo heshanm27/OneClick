@@ -51,7 +51,7 @@ public class UserServelet extends HttpServlet {
 			
 		}else {
 			request.setAttribute("isTrue",nsame );
-			RequestDispatcher dis2 = request.getRequestDispatcher("LoginCreate.jsp");
+			RequestDispatcher dis2 = request.getRequestDispatcher("UserLoginCreate.jsp");
 			dis2.forward(request, response);
 			System.out.println(isTrue);
 		}

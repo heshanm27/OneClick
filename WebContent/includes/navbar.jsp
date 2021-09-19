@@ -33,10 +33,16 @@
              <a class="btn btn-primary" href="" role="button"></span><i class="material-icons">shopping_cart</i></span>Cart</a>
             <%if(root != null){ %>
             <a class="btn btn-primary" href="LogOut" role="button"><span style="padding-right: 15px" ><i class="material-icons">logout</i></span>Log Out</a>
-        	        <a class="btn btn-primary" href="Account.jsp" role="button"><span style="padding-right: 15px" ><i class="material-icons">account_circle</i></span><% out.println(root.getName());%></a>	
+        	        <a class="btn btn-primary" href="UserAccount.jsp" role="button" style="font-size: 10px;" ><span style="padding-right: 15px" ><i class="material-icons">account_circle</i></span><% out.println(root.getName());%></a>	
         
-        		<%}else{ %>
-        		 <a class="btn btn-primary" href="LoginCreate.jsp" role="button"><span style="padding-right: 15px" ><i class="material-icons">login</i></span>Log In</a>
+        		<%}
+            else if(root1 != null){%>
+            
+             <a class="btn btn-primary" href="LogOut" role="button"><span style="padding-right: 15px" ><i class="material-icons">logout</i></span>Log Out</a>
+        	        <a class="btn btn-primary" href="SellerAccount.jsp" role="button" style="font-size: 10px;"><span style="padding-right: 15px" ><i class="material-icons">account_circle</i></span><% out.println(root1.getName());%></a>	
+            
+            <%}else{%>
+        		 <a class="btn btn-primary" href="LoginType.jsp" role="button"><span style="padding-right: 15px" ><i class="material-icons">login</i></span>Log In</a>
         		<%} %>
         </div> 
         </div>

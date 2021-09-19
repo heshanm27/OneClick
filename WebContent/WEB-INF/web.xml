@@ -82,5 +82,16 @@
 			</servlet-mapping>  
          
          
+         
+         	<servlet>
+         <servlet-name>SellerLogin</servlet-name>
+         <servlet-class>com.Seller.SellerLoginServelt</servlet-class>
+
+         </servlet>
+			<servlet-mapping>
+			<servlet-name>SellerLogin</servlet-name>
+			<url-pattern>/SellerLogin</url-pattern>
+			
+			</servlet-mapping> 
          </web-app>
          </element>
