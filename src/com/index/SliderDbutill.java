@@ -1,5 +1,6 @@
 
-package items;
+package com.index;
+import items.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,7 +17,7 @@ import com.Page.*;
 
 
 import items.*;
-public class itemsDButill {
+public class SliderDbutill {
 
 	
 	private static Connection con=null;
@@ -35,7 +36,7 @@ public class itemsDButill {
 			
 			stmt = con.createStatement();
 			
-			String sql="select * from electronics";
+			String sql="select * from electronics LIMIT 3";
 			
 			rs= stmt.executeQuery(sql);
 			

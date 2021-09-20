@@ -6,6 +6,7 @@ public class Electronics {
 	int ItemID;
 	String ItemName;
 	String ItemDetails;
+	String Title;
 	double Price;
 	String Image1;
 	String Image2;
@@ -20,7 +21,12 @@ public class Electronics {
 		return CID;
 	}
 
-
+	public String getTitle() {
+		return Title;
+	}
+	public void setTitle(String title) {
+		Title = title;
+	}
 	public void setCID(int cID) {
 		CID = cID;
 	}

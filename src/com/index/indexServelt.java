@@ -1,4 +1,4 @@
-package items;
+package com.index;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,19 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import items.Electronics;
+import items.itemsDButill;
 
 /**
- * Servlet implementation class ElectronicServelt
+ * Servlet implementation class indexServelt
  */
-@WebServlet("/Electronics")
-public class ElectronicServelt extends HttpServlet {
+@WebServlet("")
+public class indexServelt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ElectronicServelt() {
+    public indexServelt() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,17 +35,20 @@ public class ElectronicServelt extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		
-		List<Electronics> ItemDetails=itemsDButill.finditems();
+		List<Electronics> ItemDetails=SliderDbutill.finditems();
 		System.out.println(ItemDetails);
 		
 		request.setAttribute("Details", ItemDetails);
 		
-		RequestDispatcher dis = request.getRequestDispatcher("Electronic.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
 
 		dis.forward(request, response);
 		
+		
+		
 	}
 
+	
+	
 
 }

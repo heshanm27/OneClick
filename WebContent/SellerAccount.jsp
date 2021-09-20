@@ -174,12 +174,12 @@
                 <form class="row g-3">
                     <div class="col-12">
                       <label for="inputEmail4" class="form-label">Name</label>
-                      <input type="email" class="form-control" id="inputEmail4" placeholder="<% out.println(root.getName());%>">
+                      <input type="email" class="form-control" id="inputEmail4" placeholder="<% out.println(root1.getName());%>">
                     </div>
                  
                     <div class="col-12">
                         <label for="inputEmail4" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="<% out.println(root.getEmail());%>">
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="<% out.println(root1.getEmail());%>">
                       </div>
 
                     <div class="col-12">

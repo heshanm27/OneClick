@@ -54,17 +54,16 @@
       
        <div class="row row-cols-1 row-cols-4 me-5 ms-5 mt-5 mb-5">
        
-       
+  
           <%
 
-    
+   
   	ArrayList<Electronics> item = (ArrayList<Electronics>) request.getAttribute("Details");
 
-  
+    
   for(Electronics items:item){
   
-  
-	  
+ 
   
   %>
     
@@ -73,11 +72,12 @@
        
         <div class="col bg-light border border-5 border-light" >
           <div class="card" style="height: 490px">
-            <img src="data:image/jpg;base64,<%=items.getImage2()%>" width="100%" height="100%">
-            <div class="card-body">
-              <h5 class="card-title"><%=items.getPrice()%></h5>
-              <p class="card-text"><%=items.getItemName() %></p>
-            </div>
+            <img src="data:image/jpg;base64,<%=items.getImage1()%>" width="75%" height="75%">
+                <div class="card-body">
+          	<h5 class="card-title text-break fs-5"><%=items.getItemName() %></h5>
+          <p class="card-text">$<%=items.getPrice() %></p>
+          <button type="button" class="btn btn-outline-dark mt-2" style="width: auto;">Shop Now</button>
+        </div>
           </div>
         </div>
         

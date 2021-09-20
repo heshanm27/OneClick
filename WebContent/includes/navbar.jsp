@@ -1,4 +1,5 @@
 
+  
      <nav class="justify-content-center navbar bg-dark " style="height: 250px; width: 100%;" >
    
         <a class="navbarbrand "><img src="<%=request.getContextPath()%>/img/logo.png" class="me-5" id="logo" style="border-radius: 50%; left: 500px;"></a>
@@ -10,10 +11,10 @@
               <a class="nav-link active" aria-current="page" href="index.jsp"><span><i class="material-icons">home</i>Home</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"></a>
+              <a class="nav-link" href=""></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sport Item</a>
+              <a class="nav-link" href="index.jsp">Sport Item</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="Electronics"  >Electronic Accessories</a>
