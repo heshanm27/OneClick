@@ -69,6 +69,18 @@
 			
 			</servlet-mapping>  
 			
+				  <servlet>
+              <servlet-name>Clothes</servlet-name>
+         <servlet-class>items.ClothsServelt</servlet-class>
+
+         </servlet>
+			<servlet-mapping>
+			<servlet-name>Clothes</servlet-name>
+			<url-pattern>/Clothes</url-pattern>
+			
+			</servlet-mapping>  
+			
+			
 			
 		<servlet>
          <servlet-name>Search</servlet-name>
@@ -93,6 +105,18 @@
 			<url-pattern>/SellerLogin</url-pattern>
 			
 			</servlet-mapping> 
+			
+			  	<servlet>
+         <servlet-name>Orders</servlet-name>
+         <servlet-class>com.Order.OrderServelt</servlet-class>
+
+         </servlet>
+			<servlet-mapping>
+			<servlet-name>Orders</servlet-name>
+			<url-pattern>/Orders</url-pattern>
+			
+			</servlet-mapping> 
+			
 			
 			
 	

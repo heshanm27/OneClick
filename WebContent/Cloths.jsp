@@ -58,7 +58,7 @@
           <%
 
    
-  	ArrayList<Electronics> item = (ArrayList<Electronics>) request.getAttribute("Details");
+  	ArrayList<Cloths> item = (ArrayList<Cloths>) request.getAttribute("Details");
 
     
   for(Electronics items:item){
@@ -70,13 +70,13 @@
        
        
        
-        <div class="col bg-light border border-5 border-light" >
+        <div class="col bg-light border border-5 border-light " >
           <div class="card" style="height: 490px">
-            <img src="data:image/jpg;base64,<%=items.getImage1()%>" width="75%" height="75%">
+            <img class="ms-5"src="data:image/jpg;base64,<%=items.getImage1()%>" width="60%" height="60%">
                 <div class="card-body">
           	<h5 class="card-title text-break fs-5"><%=items.getItemName() %></h5>
           <p class="card-text">$<%=items.getPrice() %></p>
-            <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=electronics" role="button" style="font-size: 10px; width: auto;">Buy Now</a>	
+          <button type="button" class="btn btn-outline-dark mt-2" style="width: auto;">Shop Now</button>
         </div>
           </div>
         </div>

@@ -14,7 +14,7 @@
               <a class="nav-link" href=""></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.jsp">Sport Item</a>
+              <a class="nav-link" href="Clothes">clothes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="Electronics"  >Electronic Accessories</a>
