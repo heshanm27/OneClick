@@ -23,6 +23,7 @@ public class OrderDBUtill {
 	private static Connection con=null;
 	private static Statement stmt =null;
 	private static ResultSet rs =null;
+	public static String sql;
 	
 	public  static Order BuyNow(String ID,String Cat) {
 		
@@ -35,9 +36,12 @@ public class OrderDBUtill {
 			con = DBConnection.getConnetion();
 			
 			stmt = con.createStatement();
-			
-			String sql="SELECT * FROM '"+Cat+"' WHERE EID='"+ID+"'";
-			
+			if(Cat.equals("electronics") == true) {
+			sql="SELECT * FROM electronics WHERE EID= '"+ID+"'";
+			}
+			else {
+				sql="SELECT * FROM clothes WHERE EID= '"+ID+"'";
+			}
 			rs= stmt.executeQuery(sql);
 			
 			while(rs.next()) {

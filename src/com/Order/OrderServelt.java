@@ -41,9 +41,10 @@ public class OrderServelt extends HttpServlet {
 		String ID =  request.getParameter("ID");
 		String catagory = request.getParameter("cat");
 		
-		
+		System.out.println(ID);
+		System.out.println(catagory);
 
-		Order order=OrderDBUtill.BuyNow(ID, catagory);
+		Order order=OrderDBUtill.BuyNow(ID,catagory);
 		System.out.println("Orders");
 		System.out.println(order);
 		
