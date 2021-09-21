@@ -42,10 +42,13 @@ public class OrderDBUtill {
 			else if(Cat.equals("clothes") == true) {
 				sql="SELECT * FROM clothes WHERE EID= '"+ID+"'";
 			}
-			else if(Cat.equals("sport") == true) {
-				sql="SELECT * FROM sport WHERE EID= '"+ID+"'";
+			else if(Cat.equals("sports") == true) {
+				sql="SELECT * FROM sports WHERE EID= '"+ID+"'";
 			}
-			else {}
+			else {
+				sql="SELECT * FROM Toys WHERE EID= '"+ID+"'";
+				
+			}
 			
 			rs= stmt.executeQuery(sql);
 			
@@ -138,12 +141,15 @@ public  static List<search> Search(String like,String Cat) {
 			sql="SELECT * FROM electronics WHERE Name Like '%"+like+"%'";
 			}
 			else if(Cat.equals("clothes") == true) {
-				sql="SELECT * FROM clothes WHERE Name Like '%"+like+"%'";
+				sql="SELECT * FROM clothes WHERE ItemName Like '%"+like+"%'";
 			}
-			else if(Cat.equals("sport") == true) {
-				sql="SELECT * FROM sport WHERE Name Like '%"+like+"%'";
+			else if(Cat.equals("sports") == true) {
+				sql="SELECT * FROM sports WHERE ItemName Like '%"+like+"%'";
 			}
-			else {}
+			else {
+				
+				sql="SELECT * FROM Toys WHERE Name Like '%"+like+"%'";
+			}
 			
 			rs= stmt.executeQuery(sql);
 			

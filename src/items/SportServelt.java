@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class SportServelt
  */
-@WebServlet("/SportServelt")
+@WebServlet("/Sport")
 public class SportServelt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -35,11 +35,10 @@ public class SportServelt extends HttpServlet {
 		
 
 		List<Sport> Items = SportDBUtill.getData();
-		System.out.println(Items);
-		
+	
 		request.setAttribute("Details", Items);
 		
-		RequestDispatcher dis = request.getRequestDispatcher("Cloths.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("Sport.jsp");
 
 		dis.forward(request, response);
 		

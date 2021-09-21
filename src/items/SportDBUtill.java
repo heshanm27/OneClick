@@ -34,7 +34,7 @@ public class SportDBUtill {
 			
 			stmt = con.createStatement();
 			
-			String sql="select * from  sport";
+			String sql="select * from  sports";
 			
 			rs= stmt.executeQuery(sql);
 			

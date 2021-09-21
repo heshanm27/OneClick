@@ -118,6 +118,29 @@
 			</servlet-mapping> 
 			
 			
+			  	<servlet>
+         <servlet-name>Sport</servlet-name>
+         <servlet-class>items.SportServelt</servlet-class>
+
+         </servlet>
+			<servlet-mapping>
+			<servlet-name>Sport</servlet-name>
+			<url-pattern>/Sport</url-pattern>
+			
+			</servlet-mapping> 
+			
+				
+			  	<servlet>
+         <servlet-name>Toys</servlet-name>
+         <servlet-class>items.ToysServelt</servlet-class>
+
+         </servlet>
+			<servlet-mapping>
+			<servlet-name>Toys</servlet-name>
+			<url-pattern>/Toys</url-pattern>
+			
+			</servlet-mapping> 
+			
 			
 	
          </web-app>

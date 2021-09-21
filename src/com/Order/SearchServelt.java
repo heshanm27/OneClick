@@ -41,10 +41,28 @@ public class SearchServelt extends HttpServlet {
 		request.setAttribute("Details", Items);
 		
 		if(Cat.equals("electronics") == true) {
-		RequestDispatcher dis = request.getRequestDispatcher("electronics.jsp");
+			
+		RequestDispatcher dis = request.getRequestDispatcher("Electronic.jsp");
 
 		dis.forward(request, response);
 		}
+		else if(Cat.equals("clothes") == true) {
+			System.out.println(Cat);
+			RequestDispatcher dis = request.getRequestDispatcher("Cloths.jsp");
+
+			dis.forward(request, response);
+		}else if(Cat.equals("sports") == true) {
+			
+			RequestDispatcher dis = request.getRequestDispatcher("Sport.jsp");
+
+			dis.forward(request, response);
+		}else {
+			
+			RequestDispatcher dis = request.getRequestDispatcher("Toys.jsp");
+
+			dis.forward(request, response);
+		}
+		
 	}
 
 	

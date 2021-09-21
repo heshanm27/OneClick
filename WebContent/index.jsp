@@ -20,7 +20,10 @@
 
     }
     
-    List<Electronics> It=SliderDbutill.finditems();
+    List<Electronics> Et=SliderDbutill.findElectronic();
+    List<Sport> Sport=SliderDbutill.FindSport();
+    List<Cloths> Clo=SliderDbutill.FindCloths();
+    
     
     %>
     
@@ -120,7 +123,55 @@
 
 
     
-  for(Electronics items:It){
+  for(Cloths items:Clo){
+  
+ 
+  
+  %>
+    <div class="col">
+        <div class="card me-5 ms-5 p-1 mb-5">
+            <img  class="card-img-top" src="data:image/jpg;base64,<%=items.getImage1()%>" width="25%" height="25%"> 
+               <div class="card-body">
+          	<h5 class="card-title text-break fs-5"><%=items.getItemName() %></h5>
+          <p class="card-text">$<%=items.getPrice() %></p>
+         <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=clothes" role="button" style="font-size: 10px; width: 100px;">Buy Now</a>	
+        </div>
+    </div>
+    
+    </div>
+   <%} %> 
+</div>
+
+
+</div>
+</div>
+</section>
+
+
+<section id="itemrow" class="bg-light mt-5"> 
+<div class="row  align-item justify-content-center ">
+
+    <div class="justify-content-lg-end col-8 col-lg-4 col-xl-3 mt-5 ms-5 col-sm-2">
+            <div class="text-start">
+            <h1>Electronics</h1>
+            <p class="text text-muted mt-5" width="50px">
+                Electronics Definition – Electronics is the branch of science that deals with the study of flow and control of electrons (electricity) 
+            </p>
+            <button type="button" class="btn btn-outline-dark mt-5">Shop Now</button>
+            </div>
+    </div>
+
+           <!--card 1-->
+    <div class="justify-content-lg-end col-4 col-lg mt-5 ms-lg-2 me-3">
+      <div class="row  ">
+    
+          <%
+
+   
+
+
+    
+  for(Electronics items:Et){
   
  
   
@@ -145,58 +196,52 @@
 </section>
 
 
-
-
 <section id="itemrow" class="bg-light mt-5"> 
-    <div class="row  align-item justify-content-center ">
-    
-        <div class="justify-content-lg-end col-8 col-lg-4 col-xl-3 mt-5 ms-5 col-sm-2">
-                <div class="text-start">
-                <h1>Electronics</h1>
-                <p class="text text-muted mt-5" width="50px">
-                    Electronics Definition – Electronics is the branch of science that deals with the study of flow and control of electrons (electricity) 
-                </p>
-                <button type="button" class="btn btn-outline-dark mt-5">Shop Now</button>
-                </div>
-        </div>
-    
-               <!--card 1-->
-        <div class="justify-content-lg-end col-auto col-lg mt-5 ms-lg-2 me-3">
-            <div class="card">
-                <img src="iPhone-13-color-3.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Mobile</h5>
-              <p class="card-text">$12.00</p>
-              <button type="button" class="btn btn-outline-dark mt-2" style="width: auto;">Shop Now</button>
+<div class="row  align-item justify-content-center ">
+
+    <div class="justify-content-lg-end col-8 col-lg-4 col-xl-3 mt-5 ms-5 col-sm-2">
+            <div class="text-start">
+            <h1>Electronics</h1>
+            <p class="text text-muted mt-5" width="50px">
+                Electronics Definition – Electronics is the branch of science that deals with the study of flow and control of electrons (electricity) 
+            </p>
+            <button type="button" class="btn btn-outline-dark mt-5">Shop Now</button>
             </div>
+    </div>
+
+           <!--card 1-->
+    <div class="justify-content-lg-end col-4 col-lg mt-5 ms-lg-2 me-3">
+      <div class="row  ">
+    
+          <%
+
+   
+
+
+    
+  for(Sport items:Sport){
+  
+ 
+  
+  %>
+    <div class="col">
+        <div class="card me-5 ms-5 p-1 mb-5">
+            <img  class="card-img-top" src="data:image/jpg;base64,<%=items.getImage1()%>" width="25%" height="25%"> 
+               <div class="card-body">
+          	<h5 class="card-title text-break fs-5"><%=items.getItemName() %></h5>
+          <p class="card-text">$<%=items.getPrice() %></p>
+         <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=sports" role="button" style="font-size: 10px; width: 100px;">Buy Now</a>	
         </div>
     </div>
     
-          <!--card 2-->
-    <div class="justify-content-lg-end col-auto  col-lg mt-5 me-3">
-        <div class="card">
-            <img src="apple-watch-5-4758.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Mobile</h5>
-            <p class="card-text">$12.00</p>
-            <button type="button" class="btn btn-outline-dark mt-2" style="width: auto;">Shop Now</button>
-        </div>
     </div>
-    </div>
-          <!--card 3-->
-    <div class="justify-content-lg-end col-auto  col-lg mt-5 me-3">
-        <div class="card">
-            <img src="apple-watch-5-4758.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Mobile</h5>
-            <p class="card-text">$12.00</p>
-            <button type="button" class="btn btn-outline-dark mt-2" style="width: auto;">Shop Now</button>
-        </div>
-    </div>
-    </div>
-    
-    </div>
-    </section>
+   <%} %> 
+</div>
+
+
+</div>
+</div>
+</section>
     
 
 
