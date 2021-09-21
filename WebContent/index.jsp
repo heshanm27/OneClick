@@ -118,11 +118,13 @@
   %>
     
         <div class="card me-5 ms-5 p-1">
+        <div class="card me-5 ms-5 p-1 mb-5">
             <img  class="card-img-top" src="data:image/jpg;base64,<%=items.getImage1()%>" width="25%" height="25%"> 
                <div class="card-body">
           	<h5 class="card-title text-break fs-5"><%=items.getItemName() %></h5>
           <p class="card-text">$<%=items.getPrice() %></p>
           <button type="button" class="btn btn-outline-dark mt-2" style="width: auto;">Shop Now</button>
+         <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=electronics" role="button" style="font-size: 10px; width: 100px;">Buy Now</a>	
         </div>
     </div>
     
@@ -130,30 +132,7 @@
    <%} %> 
 </div>
 
-<!-- 
-      <!--card 2
-<div class="justify-content-lg-end col-auto  col-lg mt-5 me-3">
-    <div class="card">
-        <img src="apple-watch-5-4758.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Mobile</h5>
-        <p class="card-text">$12.00</p>
-        <button type="button" class="btn btn-outline-dark mt-2" style="width: auto;">Shop Now</button>
-    </div>
-</div>
-</div>-->
-      <!--card 3
-<div class="justify-content-lg-end col-auto  col-lg mt-5 me-3">
-    <div class="card">
-        <img src="apple-watch-5-4758.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Mobile</h5>
-        <p class="card-text">$12.00</p>
-        <button type="button" class="btn btn-outline-dark mt-2" style="width: auto;">Shop Now</button>
-    </div>
-</div>
-</div>
--->
+
 </div>
 </div>
 </section>
