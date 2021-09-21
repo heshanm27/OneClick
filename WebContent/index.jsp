@@ -53,17 +53,18 @@
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-        <img src="<%=request.getContextPath()%>/img/slider/mainover.png" lass="d-block w-100" alt="...">
+        <img src="<%=request.getContextPath()%>/img/slider/main1.png" class="d-block w-100" alt="..." style="posi">
       <div class="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>
         <p>Some representative placeholder content for the first slide.</p>
       </div>
     </div>
     <div class="carousel-item">
-         <img src="<%=request.getContextPath()%>/img/slider/main.png" class="d-block w-100" alt="...">
+         <img src="<%=request.getContextPath()%>/img/slider/toy.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Second slide label</h5>
         <p>Some representative placeholder content for the second slide.</p>
@@ -76,6 +77,14 @@
         <p>Some representative placeholder content for the third slide.</p>
       </div>
     </div>
+     <div class="carousel-item">
+              <img src="<%=request.getContextPath()%>/img/slider/cloth.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+    
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -103,7 +112,7 @@
 
            <!--card 1-->
     <div class="justify-content-lg-end col-4 col-lg mt-5 ms-lg-2 me-3">
-      <div class="row row-cols-1 row-cols-4 ">
+      <div class="row  ">
     
           <%
 
@@ -116,7 +125,7 @@
  
   
   %>
-    
+    <div class="col">
         <div class="card me-5 ms-5 p-1 mb-5">
             <img  class="card-img-top" src="data:image/jpg;base64,<%=items.getImage1()%>" width="25%" height="25%"> 
                <div class="card-body">
@@ -126,7 +135,7 @@
         </div>
     </div>
     
-    
+    </div>
    <%} %> 
 </div>
 
