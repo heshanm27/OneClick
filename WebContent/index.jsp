@@ -117,13 +117,11 @@
   
   %>
     
-        <div class="card me-5 ms-5 p-1">
         <div class="card me-5 ms-5 p-1 mb-5">
             <img  class="card-img-top" src="data:image/jpg;base64,<%=items.getImage1()%>" width="25%" height="25%"> 
                <div class="card-body">
           	<h5 class="card-title text-break fs-5"><%=items.getItemName() %></h5>
           <p class="card-text">$<%=items.getPrice() %></p>
-          <button type="button" class="btn btn-outline-dark mt-2" style="width: auto;">Shop Now</button>
          <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=electronics" role="button" style="font-size: 10px; width: 100px;">Buy Now</a>	
         </div>
     </div>
