@@ -55,12 +55,15 @@
       
        <div class="row row-cols-1 row-cols-4 me-5 ms-5 mt-5 mb-5">
        
-  
+ 
           <%
 
-   
-  	ArrayList<Electronics> item = (ArrayList<Electronics>) request.getAttribute("Details");
-
+          
+        	ArrayList<Electronics> item = (ArrayList<Electronics>) request.getAttribute("Details");
+          
+          if(item.isEmpty() != true){
+%>
+<% 
     
   for(Electronics items:item){
   
@@ -82,11 +85,20 @@
           </div>
         </div>
         
-        
-        <%
+      <%
   }
+          }else{
         %>
         
+        
+        <div class="col-12 text-center mb-5">
+        
+        <h1>No Search Result</h1>
+        </div>
+        
+        <%
+          }
+        %>
         
         
         

@@ -46,7 +46,7 @@ public class OrderDBUtill {
 				sql="SELECT * FROM sports WHERE EID= '"+ID+"'";
 			}
 			else {
-				sql="SELECT * FROM Toys WHERE EID= '"+ID+"'";
+				sql="SELECT * FROM toy WHERE EID= '"+ID+"'";
 				
 			}
 			
@@ -146,9 +146,10 @@ public  static List<search> Search(String like,String Cat) {
 			else if(Cat.equals("sports") == true) {
 				sql="SELECT * FROM sports WHERE ItemName Like '%"+like+"%'";
 			}
-			else {
+			else if(Cat.equals("toy") == true)  {
 				
-				sql="SELECT * FROM Toys WHERE Name Like '%"+like+"%'";
+				sql="SELECT * FROM toy WHERE ToyName LIKE '%"+like+"%'";
+				System.out.println("Fuck");
 			}
 			
 			rs= stmt.executeQuery(sql);

@@ -61,6 +61,9 @@
    
   	ArrayList<Sport> item = (ArrayList<Sport>) request.getAttribute("Details");
 
+          if(item.isEmpty() != true){
+%>
+<% 
     
   for(Electronics items:item){
   
@@ -77,16 +80,26 @@
                 <div class="card-body">
           	<h5 class="card-title text-break fs-5"><%=items.getItemName() %></h5>
           <p class="card-text">$<%=items.getPrice() %></p>
-        <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=sport" role="button" style="font-size: 10px; width: auto;">Buy Now</a>	
+        <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=sports" role="button" style="font-size: 10px; width: auto;">Buy Now</a>	
         </div>
           </div>
         </div>
         
         
-        <%
+       <%
   }
+          }else{
         %>
         
+        
+        <div class="col-12 text-center mb-5">
+        
+        <h1>No Search Result</h1>
+        </div>
+        
+        <%
+          }
+        %>
         
         
         

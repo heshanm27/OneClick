@@ -33,7 +33,7 @@ public class ToysDBUtill {
 			
 			stmt = con.createStatement();
 			
-			String sql="select * from  Toys";
+			String sql="select * from  toy";
 			
 			rs= stmt.executeQuery(sql);
 			

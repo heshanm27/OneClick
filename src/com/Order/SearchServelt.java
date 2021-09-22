@@ -56,7 +56,9 @@ public class SearchServelt extends HttpServlet {
 			RequestDispatcher dis = request.getRequestDispatcher("Sport.jsp");
 
 			dis.forward(request, response);
-		}else {
+		}else  {
+			
+			System.out.println("fuk2");
 			
 			RequestDispatcher dis = request.getRequestDispatcher("Toys.jsp");
 
