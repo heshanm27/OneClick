@@ -29,8 +29,18 @@
    
 List<GetDetailsClass> result = GetDataDBUtill.getData(Cat,sid);
 
+     String name = (String) request.getAttribute("Done");
+    
+    if(name =="isDone"){
+    
     %>
     
+    <script>
+    
+    alert("Item Sucessfully Deleted");
+    </script>
+    
+    <%} %>
 
 <%@include file="/includes/navbar.jsp"%>
    
@@ -69,7 +79,7 @@ List<GetDetailsClass> result = GetDataDBUtill.getData(Cat,sid);
                 <td><img src="data:image/jpg;base64,<%=items.getImage2()%>" style="width: 75%; height: 25%;"></td>
                 <td><img src="data:image/jpg;base64,<%=items.getImage3()%>" style="width: 75%; height: 25%;"></td>
                 <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#s<%=items.getItemID()%>">Update</button></td>
-                <td><a class="btn btn-danger" href="#" role="button">Delete</a></td>
+                <td><a class="btn btn-danger" href="Delete?ID=<%=items.getItemID() %>&Cat=electronics" role="button">Delete</a></td>
               </tr>
 
 

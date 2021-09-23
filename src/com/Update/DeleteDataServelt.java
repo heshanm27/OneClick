@@ -14,10 +14,12 @@ import com.Order.OrderDBUtill;
 import com.Order.search;
 import com.Seller.Seller;
 
+import items.itemsDButill;
+
 /**
  * Servlet implementation class electronicsUpdate
  */
-@WebServlet("/electronicsUpdate")
+@WebServlet("/Delete")
 public class DeleteDataServelt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -38,20 +40,23 @@ public class DeleteDataServelt extends HttpServlet {
 		
 		
 		 String Cat = request.getParameter("Cat");
+		 String ItemId = request.getParameter("ID");
 		
-		 Seller root1 = (Seller) request.getSession().getAttribute("root1");
-		   int sid =root1.getSellerID();
 		   
-		List<GetDetailsClass> Items = GetDataDBUtill.getData(Cat,sid);
-		
-		System.out.println(Items);
-		request.setAttribute("Details", Items);
-		
-		RequestDispatcher dis = request.getRequestDispatcher("Sport.jsp");
-
+		   boolean isSucess;
+		   String msg="isNotDone";
+		   
+		   if(Cat.equals("electronics") == true) {
+		isSucess = itemsDButill.DeleteItem(ItemId);
+		if(isSucess == true) {
+		msg="isDone";
+		request.setAttribute("done", msg);
+		RequestDispatcher dis = request.getRequestDispatcher("ShowData.jsp?Cat=electronics");
 		dis.forward(request, response);
 		
+		}
 		
+		   }
 	}
 
 	

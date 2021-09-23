@@ -177,6 +177,48 @@ public class itemsDButill {
 		
 	
 	
+
+	public  static boolean   DeleteItem(String EID) {
+	
+		boolean isSuccess = false;
+		con =DBConnection.getConnetion();
+	      PreparedStatement prStatement;
+	
+		try {
+		
+		
+			String sql1 = "DELETE FROM  electronics where EID=?";
+			prStatement = con.prepareStatement(sql1);
+
+			prStatement.setString(1, EID);
+		
+            
+			System.out.println(prStatement);
+			
+			int rs1 =prStatement.executeUpdate();
+			
+				if(rs1 > 0) {
+				
+				isSuccess=true;
+				}
+			
+			}
+			
+			catch (SQLException e) {
+				
+				System.out.println(e.getMessage());
+			}
+			
+			
+		
+	
+		
+		return isSuccess;
+	}
+		
+	
+	
+	
 	
 	
 	

@@ -153,6 +153,18 @@
 			
 			</servlet-mapping> 
 			
+				
+				  	<servlet>
+         <servlet-name>Delete</servlet-name>
+         <servlet-class>com.Update.DeleteDataServelt</servlet-class>
+
+         </servlet>
+			<servlet-mapping>
+			<servlet-name>Delete</servlet-name>
+			<url-pattern>/Delete</url-pattern>
+			
+			</servlet-mapping> 
+			
 			
 	
          </web-app>
