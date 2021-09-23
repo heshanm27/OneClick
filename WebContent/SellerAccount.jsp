@@ -42,26 +42,23 @@
             </div>
         </div>
 
-         <div class="col-6 bg-light border border-5 " >
-            <div class="row  ms-5 me-5  justify-content-center mt-5">
-            <img src="<%=request.getContextPath()%>/img/Account/undraw_Updates_re_o5af.svg" alt="" width="200px" height="200px">
-            <button class="btn btn-primary mt-5 mb-5" type="submit">Update Items</button>
-            </div>
-        </div>
-
-          <div class="col-6 bg-light border border-5 " >
-            <div class="row  ms-5 me-5  justify-content-center mt-5">
-            <img src="<%=request.getContextPath()%>/img/Account/undraw_Throw_away_re_x60k.svg" alt="" width="200px" height="200px">
-           <a class="btn btn-primary mt-5" href="Update" role="button"><span style="padding-right: 15px" ><i class="material-icons">login</i></span>Delete</a>
-            </div>
-        </div>
-
-         <div class="col-6 bg-light border border-5 " >
+   <div class="col-6 bg-light border border-5 " >
             <div class="row  ms-5 me-5  justify-content-center mt-5">
             <img src="<%=request.getContextPath()%>/img/Account/undraw_Updated_resume_re_q1or.svg" alt="" width="200px" height="200px">
             <button class="btn btn-primary mt-5 mb-5"   data-bs-toggle="modal" data-bs-target="#Account">Account Setting</button>
             </div>
         </div>
+
+         <div class="col-12 bg-light border border-5 " >
+            <div class="row  ms-5 me-5  justify-content-center mt-5">
+            <img src="<%=request.getContextPath()%>/img/Account/undraw_Updates_re_o5af.svg" alt="" width="200px" height="200px">
+            <button class="btn btn-primary mt-5 mb-5" data-bs-toggle="modal" data-bs-target="#DU">Update&Delete Items</button>
+            </div>
+        </div>
+
+     
+
+      
    
         </div>
     </div>
@@ -73,87 +70,43 @@
 
 <!-- ADD Item Modal -->
 
+    
     <div class="modal fade" id="add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          
+            <div class="row">
+
+              <div class="col-12 text-center" style="background-image: url(<%=request.getContextPath()%>/img/Additem/e.jpg); background-position: center; background-size: cover; height: 200px;">
+                <a href="insert.jsp" class="btn btn-primary  " style="margin-top: 6rem;">Add Electronic Accessories</a>
             </div>
-            <div class="modal-body">
-            
-
-
-
-                <form class="row g-3">
-                    <div class="col-12">
-                      <label for="inputEmail4" class="form-label">Name</label>
-                      <input type="email" class="form-control" id="inputEmail4">
-                    </div>
-                 
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Select Category </option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-
-                    <div class="col-12">
-                      <label for="inputAddress2" class="form-label">Price</label>
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="$0.00">
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-text">Item Discription</span>
-                        <textarea class="form-control" aria-label="With textarea"></textarea>
-                      </div>
-
-                    <div class="col-md-4">
-                      <label for="inputState" class="form-label">State</label>
-                      <select id="inputState" class="form-select">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                      </select>
-                    </div>
-                    <div class="col-md-2">
-                      <label for="inputZip" class="form-label">Zip</label>
-                      <input type="text" class="form-control" id="inputZip">
-                    </div>
-                    <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                         Agree For Conditions
-                        </label>
-                      </div>
-                    </div>
-                    <div class="photo-input col-4">
-                        <p>Choose Image 1</p>
-                        <input type="file" id="loadFile" onchange="console.log(this.files[0].name);" /> 
-                     </div>
-                     <div class="photo-input justify-content-center col-4">
-                        <p>Choose Image 2</p>
-                        <input type="file" id="loadFile" onchange="console.log(this.files[0].name);" /> 
-                     </div>
-                     <div class="photo-input col-4">
-                        <p>Choose Image 3</p>
-                        <input type="file" id="loadFile" onchange="console.log(this.files[0].name);" /> 
-                     </div>
-                    <div class="col-12">
-                      <button type="submit" class="btn btn-primary">Sign in</button>
-                    </div>
-                  </form>
-
-
-
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <div class="col-12 text-center" style="background-image: url(<%=request.getContextPath()%>/img/Additem/c.jpg); background-position: center; background-size: cover; height: 200px;">
+              <a href="#" class="btn btn-primary" style="margin-top: 6rem;">Add Clothes Items</a>
+          </div>
+          <div class="col-12 text-center" style="background-image: url(<%=request.getContextPath()%>/img/Additem/s.jpg); background-position: center; background-size: cover; height: 200px;">
+            <a href="#" class="btn btn-primary" style="margin-top: 6rem;">Add Sport Items</a>
+        </div>
+        <div class="col-12 text-center" style="background-image: url(<%=request.getContextPath()%>/img/Additem/t.jpg); background-position: center; background-size: cover; height: 200px;">
+          <a href="#" class="btn btn-primary" style="margin-top: 6rem;" >Add Toy Items</a>
+        </div>
              
-            </div>
+
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+           
           </div>
         </div>
       </div>
+    </div>
+    </div>
 
 
 <!--Account Setting Modal  -->
@@ -209,66 +162,45 @@
       </div>
 
 
+<!-- Delete &update Item Model -->
 
 
-<!-- Delete Items -->
-    <div class="modal fade" id="Delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="modal fade" id="DU" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          
+            <div class="row">
+
+              <div class="col-12 text-center" style="background-image: url(<%=request.getContextPath()%>/img/Additem/e.jpg); background-position: center; background-size: cover; height: 200px;">
+                <a href="ShowData.jsp?Cat=electronics" class="btn btn-primary  " style="margin-top: 6rem; width:200px" >Delete&Update Electronic Accessories</a>
             </div>
-            <div class="modal-body">
-            
-
-
-
-                <form class="row g-3">
-                   <table class="table table-dark table-hover">
-                   
-  							<tr>
-  							<th class="table-dark">itemId</th>
-  							<th class="table-dark">Item Name</th>
-  							<th class="table-dark">item Details</th>
-  							<th class="table-dark">Item Price</th>
-  							</tr>
-                   
-   
-  							<tr>
-  						
-								</tr>
-								
-								
-	
-							</table>
-                  </form>
-
- <form class="row g-3">
-                   <table class="table table-dark table-hover">
-  							<tr>
-  							<th class="table-dark">1</th>
-  							<th class="table-dark">2</th>
-  							<th class="table-dark">3</th>
-  							<th class="table-dark">4</th>
-  							</tr>
-  							<tr>
-  							<td class="table-dark">...</td>
-	 						<td class="table-dark">...</td>
- 							<td class="table-dark">...</td>
- 							<td class="table-dark">...</td>
-								</tr>
-							</table>
-                  </form>
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <div class="col-12 text-center" style="background-image: url(<%=request.getContextPath()%>/img/Additem/c.jpg); background-position: center; background-size: cover; height: 200px;">
+              <a href="#" class="btn btn-primary" style="margin-top: 6rem; width:150px;">Delete&Update Clothes Items</a>
+          </div>
+          <div class="col-12 text-center" style="background-image: url(<%=request.getContextPath()%>/img/Additem/s.jpg); background-position: center; background-size: cover; height: 200px;">
+            <a href="#" class="btn btn-primary" style="margin-top: 6rem; width:150px;">Delete&Update  Sport Items</a>
+        </div>
+        <div class="col-12 text-center" style="background-image: url(<%=request.getContextPath()%>/img/Additem/t.jpg); background-position: center; background-size: cover; height: 200px;">
+          <a href="#" class="btn btn-primary" style="margin-top: 6rem; width:150px;" >Delete&Update  Toy Items</a>
+        </div>
              
-            </div>
+
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+           
           </div>
         </div>
       </div>
+    </div>
+    </div>
 
 
       

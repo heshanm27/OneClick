@@ -142,6 +142,18 @@
 			</servlet-mapping> 
 			
 			
+				  	<servlet>
+         <servlet-name>ElectronicInsert</servlet-name>
+         <servlet-class>com.insert.electronicInsert</servlet-class>
+
+         </servlet>
+			<servlet-mapping>
+			<servlet-name>ElectronicInsert</servlet-name>
+			<url-pattern>/ElectronicInsert</url-pattern>
+			
+			</servlet-mapping> 
+			
+			
 	
          </web-app>
          </element>

@@ -1,4 +1,4 @@
-package com.Order;
+package com.Update;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,17 +10,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.Order.OrderDBUtill;
+import com.Order.search;
+import com.Seller.Seller;
+
 /**
- * Servlet implementation class SearchServelt
+ * Servlet implementation class electronicsUpdate
  */
-@WebServlet("/Search")
-public class SearchServelt extends HttpServlet {
+@WebServlet("/electronicsUpdate")
+public class DeleteDataServelt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchServelt() {
+    public DeleteDataServelt() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,41 +36,23 @@ public class SearchServelt extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		 String Cat = request.getParameter("cat");
-		 String like = request.getParameter("Search");
 		
+		 String Cat = request.getParameter("Cat");
 		
-		List<search> Items = OrderDBUtill.Search(like, Cat);
+		 Seller root1 = (Seller) request.getSession().getAttribute("root1");
+		   int sid =root1.getSellerID();
+		   
+		List<GetDetailsClass> Items = GetDataDBUtill.getData(Cat,sid);
+		
 		System.out.println(Items);
 		request.setAttribute("Details", Items);
 		
-		if(Cat.equals("electronics") == true) {
-			
-		RequestDispatcher dis = request.getRequestDispatcher("Electronic.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("Sport.jsp");
 
 		dis.forward(request, response);
-		}
-		else if(Cat.equals("clothes") == true) {
 		
-			RequestDispatcher dis = request.getRequestDispatcher("Cloths.jsp");
-
-			dis.forward(request, response);
-		}else if(Cat.equals("sports") == true) {
-			
-			RequestDispatcher dis = request.getRequestDispatcher("Sport.jsp");
-
-			dis.forward(request, response);
-		}else  {
-			
-	
-			
-			RequestDispatcher dis = request.getRequestDispatcher("Toys.jsp");
-
-			dis.forward(request, response);
-		}
 		
 	}
 
 	
-
 }

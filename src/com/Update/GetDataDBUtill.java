@@ -1,5 +1,10 @@
+package com.Update;
 
-package items;
+
+
+
+
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,16 +22,19 @@ import com.Page.*;
 
 
 import items.*;
-public class itemsDButill {
+public class GetDataDBUtill {
 
 	
 	private static Connection con=null;
 	private static Statement stmt =null;
 	private static ResultSet rs =null;
+	public static String sql;
 	
-	public  static List<Electronics> finditems() {
+	public  static List<GetDetailsClass> getData(String Cat,int ID) {
 		
-		ArrayList<Electronics> item = new ArrayList<Electronics>();
+		ArrayList<GetDetailsClass> item = new ArrayList<GetDetailsClass>();
+		
+		
 		
 	
 		try {
@@ -36,7 +44,19 @@ public class itemsDButill {
 			
 			stmt = con.createStatement();
 			
-			String sql="select * from electronics";
+				if(Cat.equals("electronics") == true) {
+				sql="SELECT * FROM electronics WHERE SID= '"+ID+"'";
+				}
+				else if(Cat.equals("clothes") == true) {
+					sql="SELECT * FROM clothes WHERE SID= '"+ID+"'";
+				}
+				else if(Cat.equals("sports") == true) {
+					sql="SELECT * FROM sports WHERE SID= '"+ID+"'";
+				}
+				else {
+					sql="SELECT * FROM toy WHERE SID= '"+ID+"'";
+					
+				}
 			
 			rs= stmt.executeQuery(sql);
 			
@@ -81,7 +101,7 @@ public class itemsDButill {
 					}
 	            
 				}//for
-	                Electronics el = new Electronics();
+				GetDetailsClass el = new GetDetailsClass();
 	                
 	                el.setItemID(id);
 	                el.setItemName(Name);
@@ -119,62 +139,6 @@ public class itemsDButill {
 	
 	
 	
-	
-	public  static boolean   insertItem(String name,String title,String Disc,double price,InputStream img1,InputStream img2,InputStream img3,int sid) {
-	
-		boolean isSuccess = false;
-		con =DBConnection.getConnetion();
-	      PreparedStatement prStatement;
-	
-		try {
-		
-		
-			String sql1 = "insert into electronics "+"(Name,Title,Discription,Price,Image1,Image2,Image3,SID)"+ " values (?,?,?,?,?,?,?,?)";
-			prStatement = con.prepareStatement(sql1);
-
-			prStatement.setString(1,name);
-			prStatement.setString(2,title);
-			prStatement.setString(3,Disc);
-			prStatement.setDouble(4,price);
-			
-			if (img1 != null) {
-			prStatement.setBlob(5,img1);
-			System.out.println("dbgetimg1 sucess");
-			}
-			if(img2 != null) {
-			prStatement.setBlob(6,img2);
-			System.out.println("dbgetimg2 sucess");
-			}
-			if(img3 != null) {
-			prStatement.setBlob(7,img3);
-			System.out.println("dbgetimg3 sucess");
-			}
-			
-			prStatement.setInt(8, sid);
-            
-			System.out.println(prStatement);
-			
-			int rs1 =prStatement.executeUpdate();
-			
-				if(rs1 > 0) {
-				
-				isSuccess=true;
-				}
-			
-			}
-			
-			catch (SQLException e) {
-				
-				System.out.println(e.getMessage());
-			}
-			
-			
-		
-	
-		
-		return isSuccess;
-	}
-		
 	
 	
 	
