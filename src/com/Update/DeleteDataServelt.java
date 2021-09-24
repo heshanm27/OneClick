@@ -14,6 +14,9 @@ import com.Order.OrderDBUtill;
 import com.Order.search;
 import com.Seller.Seller;
 
+import items.ClothsDButil;
+import items.SportDBUtill;
+import items.ToysDBUtill;
 import items.itemsDButill;
 
 /**
@@ -43,20 +46,31 @@ public class DeleteDataServelt extends HttpServlet {
 		 String ItemId = request.getParameter("ID");
 		
 		   
-		   boolean isSucess;
-		   String msg="isNotDone";
+		   boolean isSucess=false;
+		  
 		   
 		   if(Cat.equals("electronics") == true) {
-		isSucess = itemsDButill.DeleteItem(ItemId);
+			   isSucess = itemsDButill.DeleteItem(ItemId);
+		   }else if(Cat.equals("clothes") == true) {
+			   
+			   isSucess = ClothsDButil.DeleteItem(ItemId);
+		   }else if(Cat.equals("sports") == true) {
+			   isSucess = SportDBUtill.DeleteItem(ItemId);
+		   }
+		   else if(Cat.equals("Toy") == true){
+			   isSucess = ToysDBUtill.DeleteItem(ItemId);
+		   }
+		   
+		   
 		if(isSucess == true) {
-		msg="isDone";
+			String  msg="isDone";
 		request.setAttribute("done", msg);
-		RequestDispatcher dis = request.getRequestDispatcher("ShowData.jsp?Cat=electronics");
+		RequestDispatcher dis = request.getRequestDispatcher("ShowData.jsp?Cat="+Cat);
 		dis.forward(request, response);
 		
 		}
 		
-		   }
+		   
 	}
 
 	

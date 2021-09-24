@@ -292,5 +292,95 @@ public  static List<Sport> FindSport() {
 	return spt;
 }
 
+
+
+public  static List<Toys> FindToy() {
+
+ArrayList<Toys> toys = new ArrayList<>();
+
+
+try {
+	
+	
+	con = DBConnection.getConnetion();
+	
+	stmt = con.createStatement();
+	
+	String sql="select * from  toy LIMIT 3";
+	
+	rs= stmt.executeQuery(sql);
+	
+	while(rs.next()) {
+		
+		int i;
+		int id =rs.getInt(1);
+		String Name = rs.getString(2);
+		String Title =rs.getString(3);
+		String Details = rs.getString(4);
+		double price =rs.getDouble(5);
+		Blob[] image = {rs.getBlob(6),rs.getBlob(7),rs.getBlob(8)};
+		int uid = rs.getInt(9);
+		String[] base64Image = new String[3];
+		
+		
+		for(i=0;i<3;i++) {
+		
+		 InputStream inputStream = image[i].getBinaryStream();
+         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+         byte[] buffer = new byte[4096];
+          int bytesRead = -1;
+             
+            try {
+				while ((bytesRead = inputStream.read(buffer)) != -1) {
+				    outputStream.write(buffer, 0, bytesRead);                  
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+             
+            byte[] imageBytes = outputStream.toByteArray();
+             base64Image[i] = Base64.getEncoder().encodeToString(imageBytes);
+		
+            try {
+				inputStream.close();
+				 outputStream.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        
+		}//for
+				Toys toy = new Toys();
+            
+				toy.setItemID(id);
+				toy.setItemName(Name);
+				toy.setItemDetails(Details);
+				toy.setTitle(Title);
+				toy.setPrice(price);
+				toy.setCID(uid);
+				toy.setImage1(base64Image[0]);
+				toy.setImage2(base64Image[1]);
+				toy.setImage3(base64Image[2]);
+	                
+				
+				toys.add(toy);
+				
+   
+
+		
+		
+		
+	}
+	
+} catch (SQLException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
+
+
+
+return toys;
+}
 	
 }

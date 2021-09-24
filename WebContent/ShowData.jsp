@@ -6,6 +6,8 @@
     <%@page import="java.sql.Blob"%>
      <%@page import="com.Seller.*"%>
       <%@page import="com.Update.*"%>
+      <%@page import="javax.sql.rowset.serial.SerialBlob"%>
+     <%@page  import="java.awt.image.BufferedImage"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,18 +31,11 @@
    
 List<GetDetailsClass> result = GetDataDBUtill.getData(Cat,sid);
 
-     String name = (String) request.getAttribute("Done");
-    
-    if(name =="isDone"){
-    
+   
     %>
     
-    <script>
-    
-    alert("Item Sucessfully Deleted");
-    </script>
-    
-    <%} %>
+   
+ 
 
 <%@include file="/includes/navbar.jsp"%>
    
@@ -49,10 +44,28 @@ List<GetDetailsClass> result = GetDataDBUtill.getData(Cat,sid);
 
 <div class="container-fluid align-self-center mt-5 mb-5 ">
 
+<%  String name = (String) request.getAttribute("done");
+String status = (String) request.getAttribute("Ok");
+
+if(name =="isDone"){
+ %>
+  
+  <div class="alert alert-success" role="alert">
+Successfully Item Has been deleted
+</div>
+  
+    <%}else if(status == "isOk" ){ %>
+      <div class="alert alert-success" role="alert">
+Successfully Item Has been Updated
+</div>
+    
+    
+    <%} %>
+
     <div class="row ">
 
       
-        <table class="table table-dark table-hover">
+        <table class="table table-dark table-hover " style="margin-bottom:200px;">
 
             <tr>
                 <th>Item Name</th>
@@ -67,7 +80,11 @@ List<GetDetailsClass> result = GetDataDBUtill.getData(Cat,sid);
 
               </tr>
 <% 
+
+	if(result.isEmpty() != true){
   for(Electronics items:result){
+	 
+	
 %>
               <tr>
                 <td><%=items.getItemName() %></td>
@@ -79,7 +96,7 @@ List<GetDetailsClass> result = GetDataDBUtill.getData(Cat,sid);
                 <td><img src="data:image/jpg;base64,<%=items.getImage2()%>" style="width: 75%; height: 25%;"></td>
                 <td><img src="data:image/jpg;base64,<%=items.getImage3()%>" style="width: 75%; height: 25%;"></td>
                 <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#s<%=items.getItemID()%>">Update</button></td>
-                <td><a class="btn btn-danger" href="Delete?ID=<%=items.getItemID() %>&Cat=electronics" role="button">Delete</a></td>
+                <td><a class="btn btn-danger" href="Delete?ID=<%=items.getItemID() %>&Cat=<%=request.getParameter("Cat") %>" role="button">Delete</a></td>
               </tr>
 
 
@@ -95,26 +112,28 @@ List<GetDetailsClass> result = GetDataDBUtill.getData(Cat,sid);
             </div>
             <div class="modal-body">
               
-    <form action="ElectronicInsert" method="post"  enctype="multipart/form-data" class="row g-3" >
+    <form action="Updated" method="post"  enctype="multipart/form-data" class="row g-3" >
         <div class="col-12">
           <label for="inputEmail4" class="form-label">ItemName</label>
-          <input type="text" class="form-control" id="inputEmail4" name="Name" placeholder="<%=items.getItemName() %>">
+          <input type="text" class="form-control" id="inputEmail4" name="Name" placeholder="<%=items.getItemName() %>" value="<%=items.getItemName() %>">
         </div>
         
          <div class="col-12">
           <label for="inputEmail4" class="form-label">Title</label>
-          <input type="text" class="form-control" id="inputEmail4" name="title" placeholder="<%=items.getTitle() %>">
+          <input type="text" class="form-control" id="inputEmail4" name="title" placeholder="<%=items.getTitle() %>" value="<%=items.getTitle() %>">
         </div>
        
 
         <div class="col-12">
           <label for="inputAddress2" class="form-label">Price</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="<%=items.getPrice() %>" name="prixe">
+          <input type="text" class="form-control" id="inputAddress2" placeholder="<%=items.getPrice() %>" name="prixe" value="<%=items.getPrice() %>">
+             <input type="hidden" class="form-control" id="inputAddress2" placeholder="<%=items.getPrice() %>" name="ID" value="<%=items.getItemID()%>">
+             <input type="hidden" class="form-control" id="inputAddress2" placeholder="<%=items.getPrice() %>" name="Cat" value="<%=request.getParameter("Cat")%>">
         </div>
         <div class="input mb-5">
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                <textarea cols="100" rows="10"  placeholder=""></textarea>
+                <label for="exampleFormControlTextarea1" class="form-label">Item Description</label>
+                <textarea cols="100" rows="10"  name="description"><%=items.getItemDetails() %></textarea>
             
           </div>
 
@@ -130,15 +149,15 @@ List<GetDetailsClass> result = GetDataDBUtill.getData(Cat,sid);
         <div class="row">
         <div class="photo-input col-4">
             <p>Choose Image 1</p>
-            <input type="file" id="loadFile" onchange="console.log(this.files[0].name);" name="image1" /> 
+            <input type="file" id="loadFile" onchange="console.log(this.files[0].name);" name="image1"/> 
          </div>
          <div class="photo-input justify-content-center col-4">
             <p>Choose Image 2</p>
-            <input type="file" id="loadFile" onchange="console.log(this.files[0].name);" name="image2" /> 
+            <input type="file" id="loadFile" onchange="console.log(this.files[0].name);" name="image2"/> 
          </div>
          <div class="photo-input col-4">
             <p>Choose Image 3</p>
-            <input type="file" id="loadFile" onchange="console.log(this.files[0].name);" name="image3"  /> 
+            <input type="file" id="loadFile" onchange="console.log(this.files[0].name);" name="image3"/> 
          </div> 
         </div> 
         <div class="row">
@@ -161,10 +180,15 @@ List<GetDetailsClass> result = GetDataDBUtill.getData(Cat,sid);
 
 
 
-              <%} %>
+              <%}}else{ %>
 
 
+	<tr>
+	<td colspan="9" class="text-center"><h1>No Items Exist</h1></td>
+     
+	</tr>
 
+<%} %>
         </table>
       
 
