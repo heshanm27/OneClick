@@ -23,6 +23,7 @@
     List<Electronics> Et=SliderDbutill.findElectronic();
     List<Sport> Sport=SliderDbutill.FindSport();
     List<Cloths> Clo=SliderDbutill.FindCloths();
+    List<Toys> toy=SliderDbutill.FindToy();
     
     
     %>
@@ -99,7 +100,7 @@
   </button>
 </div>
 
-
+<!--Clothes Section  -->
 <section id="itemrow" class="bg-light mt-5"> 
 <div class="row  align-item justify-content-center ">
 
@@ -147,7 +148,7 @@
 </div>
 </section>
 
-
+<!--Electronic Section  -->
 <section id="itemrow" class="bg-light mt-5"> 
 <div class="row  align-item justify-content-center ">
 
@@ -195,7 +196,7 @@
 </div>
 </section>
 
-
+<!--Sport Section  -->
 <section id="itemrow" class="bg-light mt-5"> 
 <div class="row  align-item justify-content-center ">
 
@@ -244,6 +245,56 @@
 </section>
     
 
+
+
+<!--Toy Section  -->
+<section id="itemrow" class="bg-light mt-5"> 
+<div class="row  align-item justify-content-center ">
+
+    <div class="justify-content-lg-end col-8 col-lg-4 col-xl-3 mt-5 ms-5 col-sm-2">
+            <div class="text-start">
+            <h1>Electronics</h1>
+            <p class="text text-muted mt-5" width="50px">
+                Electronics Definition – Electronics is the branch of science that deals with the study of flow and control of electrons (electricity) 
+            </p>
+            <button type="button" class="btn btn-outline-dark mt-5">Shop Now</button>
+            </div>
+    </div>
+
+           <!--card 1-->
+    <div class="justify-content-lg-end col-4 col-lg mt-5 ms-lg-2 me-3">
+      <div class="row  ">
+    
+          <%
+
+   
+
+
+    
+  for(Toys items:toy){
+  
+ 
+  
+  %>
+    <div class="col">
+        <div class="card me-5 ms-5 p-1 mb-5">
+            <img  class="card-img-top" src="data:image/jpg;base64,<%=items.getImage1()%>" width="25%" height="25%"> 
+               <div class="card-body">
+          	<h5 class="card-title text-break fs-5"><%=items.getItemName() %></h5>
+          <p class="card-text">$<%=items.getPrice() %></p>
+         <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=sports" role="button" style="font-size: 10px; width: 100px;">Buy Now</a>	
+        </div>
+    </div>
+    
+    </div>
+   <%} %> 
+</div>
+
+
+</div>
+</div>
+</section>
+    
 
 <%@include file="/includes/Footer.jsp"%>
 </html>
