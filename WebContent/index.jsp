@@ -227,11 +227,15 @@
   %>
     <div class="col">
         <div class="card me-5 ms-5 p-1 mb-5">
+          <div class="card-image loading">
             <img  class="card-img-top" src="data:image/jpg;base64,<%=items.getImage1()%>" width="25%" height="25%"> 
+            </div>  
                <div class="card-body">
-          	<h5 class="card-title text-break fs-5"><%=items.getItemName() %></h5>
-          <p class="card-text">$<%=items.getPrice() %></p>
+          	<h5 class="card-title loading text-break fs-5"><%=items.getItemName() %></h5>
+          <p class="card-description loading">$<%=items.getPrice() %></p>
+            <div  class="btn placeholder bg-dark col-6 divbtn">
          <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=sports" role="button" style="font-size: 10px; width: 100px;">Buy Now</a>	
+         </div>
         </div>
     </div>
     
@@ -296,5 +300,7 @@
 </section>
     
 
+      
+<%@include file="/includes/js.jsp"%>
 <%@include file="/includes/Footer.jsp"%>
 </html>

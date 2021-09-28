@@ -81,7 +81,7 @@
                 <div class="card-body">
           	<h5 class="card-title text-break fs-5"><%=items.getItemName() %></h5>
           <p class="card-text">$<%=items.getPrice() %></p>
-        <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=Toys" role="button" style="font-size: 10px; width: auto;">Buy Now</a>	
+        <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=toy" role="button" style="font-size: 10px; width: auto;">Buy Now</a>	
         </div>
           </div>
         </div>

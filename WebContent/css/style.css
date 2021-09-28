@@ -63,10 +63,7 @@ margin-top: -100px;
 
 
 
-.form-control {
 
-border-radius: 55rem;
-}
 
 .btn {
 position: relative;
@@ -98,13 +95,9 @@ height: unset !important;
 .py-5 {
 padding-top: 3rem!important;
 padding-bottom: 3rem!important;
-background-color: rebeccapurple;
+
 }
 
-.row {
-
---bs-gutter-x:0rem;
-}
 
 .card-img, .card-img-bottom, .card-img-top {
 width: 100%;
@@ -151,3 +144,8 @@ background-color: tomato !important;
     top: 46%;
   }
 }
+
+
+
+
+      

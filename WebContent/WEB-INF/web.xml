@@ -176,6 +176,17 @@
 			<url-pattern>/Updated</url-pattern>
 			
 			</servlet-mapping> 
-	
+			
+			
+		  	<servlet>
+         <servlet-name>Pay</servlet-name>
+         <servlet-class>com.Pay.PayServelt</servlet-class>
+
+         </servlet>
+			<servlet-mapping>
+			<servlet-name>Pay</servlet-name>
+			<url-pattern>/Pay</url-pattern>
+			
+			</servlet-mapping> 
          </web-app>
          </element>

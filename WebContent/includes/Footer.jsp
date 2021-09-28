@@ -1,4 +1,6 @@
-  <footer class="row row-cols-5 py-5 bg-black">
+
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/index.js"></script>
+  <footer class="row row-cols-5 py-5 bg-black me-0">
       
 
   

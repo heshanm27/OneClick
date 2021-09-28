@@ -22,6 +22,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+
+.show{
+visibility: visible;
+}
+</style>
 <meta charset="ISO-8859-1">
 
 <%@include file="/includes/head.jsp"%>
