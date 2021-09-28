@@ -29,18 +29,26 @@
    
 
 
-
-
-
-
 <!-- ADD Item Modal -->
 
 <div class="container-sm align-self-center mt-5 mb-5  bg-light" style="width:50%;">
+<%
+String status = (String) request.getAttribute("mesg");
+
+if(status =="Sucess"){
+ %>
+  
+  <div class="alert alert-success" role="alert">
+Successfully Item Has been Inserted
+  <button type="button" class="btn-close text-end" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<%} %>
 
     <div class="row  align-item justify-content-center  ">
 
 
-                 <form action="ElectronicInsert" method="post"  enctype="multipart/form-data" class="row g-3" >
+                 <form action="<%=request.getParameter("Cat") %> " method="post"  enctype="multipart/form-data" class="row g-3" >
                     <div class="col-12">
                       <label for="inputEmail4" class="form-label">ItemName</label>
                       <input type="text" class="form-control" id="inputEmail4" name="Name">
@@ -81,7 +89,7 @@
                      <div class="photo-input col-4">
                         <p>Choose Image 3</p>
                         <input type="file" id="loadFile" onchange="console.log(this.files[0].name);" name="image3"  /> 
-                     </div> -->   
+                     </div> 
                     <div class="col-12 mt-5 mb-5">
                       <button type="submit" class="btn btn-primary">Add Item</button>
                     </div>

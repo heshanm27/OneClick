@@ -166,6 +166,16 @@
 			</servlet-mapping> 
 			
 			
+				  	<servlet>
+         <servlet-name>Updated</servlet-name>
+         <servlet-class>com.Update.UpdateServelt</servlet-class>
+
+         </servlet>
+			<servlet-mapping>
+			<servlet-name>Updated</servlet-name>
+			<url-pattern>/Updated</url-pattern>
+			
+			</servlet-mapping> 
 	
          </web-app>
          </element>

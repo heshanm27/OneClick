@@ -83,16 +83,16 @@
             <div class="row">
 
               <div class="col-12 text-center" style="background-image: url(<%=request.getContextPath()%>/img/Additem/e.jpg); background-position: center; background-size: cover; height: 200px;">
-                <a href="insert.jsp" class="btn btn-primary  " style="margin-top: 6rem;">Add Electronic Accessories</a>
+                <a href="insert.jsp?Cat=ElectronicInsert" class="btn btn-primary  " style="margin-top: 6rem;">Add Electronic Accessories</a>
             </div>
             <div class="col-12 text-center" style="background-image: url(<%=request.getContextPath()%>/img/Additem/c.jpg); background-position: center; background-size: cover; height: 200px;">
-              <a href="#" class="btn btn-primary" style="margin-top: 6rem;">Add Clothes Items</a>
+              <a href="insert.jsp?Cat=ClothesInsert" class="btn btn-primary" style="margin-top: 6rem;">Add Clothes Items</a>
           </div>
           <div class="col-12 text-center" style="background-image: url(<%=request.getContextPath()%>/img/Additem/s.jpg); background-position: center; background-size: cover; height: 200px;">
-            <a href="#" class="btn btn-primary" style="margin-top: 6rem;">Add Sport Items</a>
+            <a href="insert.jsp?Cat=SportInsert" class="btn btn-primary" style="margin-top: 6rem;">Add Sport Items</a>
         </div>
         <div class="col-12 text-center" style="background-image: url(<%=request.getContextPath()%>/img/Additem/t.jpg); background-position: center; background-size: cover; height: 200px;">
-          <a href="#" class="btn btn-primary" style="margin-top: 6rem;" >Add Toy Items</a>
+          <a href="insert.jsp?Cat=ToyInsert" class="btn btn-primary" style="margin-top: 6rem;" >Add Toy Items</a>
         </div>
              
 
@@ -180,13 +180,13 @@
                 <a href="ShowData.jsp?Cat=electronics" class="btn btn-primary  " style="margin-top: 6rem; width:200px" >Delete&Update Electronic Accessories</a>
             </div>
             <div class="col-12 text-center" style="background-image: url(<%=request.getContextPath()%>/img/Additem/c.jpg); background-position: center; background-size: cover; height: 200px;">
-              <a href="#" class="btn btn-primary" style="margin-top: 6rem; width:150px;">Delete&Update Clothes Items</a>
+              <a href="ShowData.jsp?Cat=clothes" class="btn btn-primary" style="margin-top: 6rem; width:150px;">Delete&Update Clothes Items</a>
           </div>
           <div class="col-12 text-center" style="background-image: url(<%=request.getContextPath()%>/img/Additem/s.jpg); background-position: center; background-size: cover; height: 200px;">
-            <a href="#" class="btn btn-primary" style="margin-top: 6rem; width:150px;">Delete&Update  Sport Items</a>
+            <a href="ShowData.jsp?Cat=sports" class="btn btn-primary" style="margin-top: 6rem; width:150px;">Delete&Update  Sport Items</a>
         </div>
         <div class="col-12 text-center" style="background-image: url(<%=request.getContextPath()%>/img/Additem/t.jpg); background-position: center; background-size: cover; height: 200px;">
-          <a href="#" class="btn btn-primary" style="margin-top: 6rem; width:150px;" >Delete&Update  Toy Items</a>
+          <a href="ShowData.jsp?Cat=Toy" class="btn btn-primary" style="margin-top: 6rem; width:150px;" >Delete&Update  Toy Items</a>
         </div>
              
 

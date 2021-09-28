@@ -48,10 +48,10 @@ public class GetDataDBUtill {
 				sql="SELECT * FROM electronics WHERE SID= '"+ID+"'";
 				}
 				else if(Cat.equals("clothes") == true) {
-					sql="SELECT * FROM clothes WHERE SID= '"+ID+"'";
+					sql="SELECT * FROM clothes WHERE UID= '"+ID+"'";
 				}
 				else if(Cat.equals("sports") == true) {
-					sql="SELECT * FROM sports WHERE SID= '"+ID+"'";
+					sql="SELECT * FROM sports WHERE UID= '"+ID+"'";
 				}
 				else {
 					sql="SELECT * FROM toy WHERE SID= '"+ID+"'";
