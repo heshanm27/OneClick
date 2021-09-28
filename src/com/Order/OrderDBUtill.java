@@ -138,17 +138,17 @@ public  static List<search> Search(String like,String Cat) {
 			
 			stmt = con.createStatement();
 			if(Cat.equals("electronics") == true) {
-			sql="SELECT * FROM electronics WHERE Name Like '%"+like+"%'";
+			sql="SELECT * FROM electronics WHERE Title Like '%"+like+"%'";
 			}
 			else if(Cat.equals("clothes") == true) {
 				sql="SELECT * FROM clothes WHERE ItemName Like '%"+like+"%'";
 			}
 			else if(Cat.equals("sports") == true) {
-				sql="SELECT * FROM sports WHERE ItemName Like '%"+like+"%'";
+				sql="SELECT * FROM sports WHERE Title Like '%"+like+"%'";
 			}
 			else if(Cat.equals("toy") == true)  {
 				
-				sql="SELECT * FROM toy WHERE ToyName LIKE '%"+like+"%'";
+				sql="SELECT * FROM toy WHERE TTile LIKE '%"+like+"%'";
 				
 			}
 			

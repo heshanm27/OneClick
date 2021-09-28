@@ -39,7 +39,7 @@
 
           <form class=" mt-5 mb-5 w-75" action="Search" method="get">
             <div class="input-group  ">
-              <input type="text" class="form-control" placeholder="Searh" aria-label="Recipient's username" aria-describedby="basic-addon2" name="Search">
+              <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" name="Search">
               <input type="hidden" name="cat" value="sports"/>
               <span class="input-group-text bg-light" id="basic-addon2"><button type="submit" class="btn btn-primary"><span style="padding-right: 15px" ><i class="material-icons">search</i></span>Search</button></span>
             </div>
