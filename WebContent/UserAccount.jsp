@@ -27,8 +27,25 @@
 
 <%@include file="/includes/navbar.jsp"%>
    
+<% String name = (String) request.getAttribute("Ok"); 
 
 
+if(name == "done"){
+	
+%>
+
+    <div class="alert alert-success fs-4" role="alert">Account Successfully Updated  </div>
+
+
+<% }
+
+String err = (String) request.getAttribute("err");
+if(err == "wrong"){%>
+    <div class="alert alert-danger fs-4" role="alert">
+SomeThing went wrong 
+</div>
+
+<%} %>
 <!--Mid Containt  -->
 
 <div class="container-sm align-self-center mt-5 mb-5">
@@ -59,7 +76,7 @@
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Account Setting</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -67,24 +84,24 @@
 
 
 
-                <form class="row g-3">
+                <form class="row g-3 needs-validation" action="UserUpdate" method="post" novalidate>
                     <div class="col-12">
                       <label for="inputEmail4" class="form-label">Name</label>
-                      <input type="email" class="form-control" id="inputEmail4" placeholder="<% out.println(root.getName());%>">
-                    </div>
-                 
+                      <input type="text" class="form-control" id="inputEmail4" name="name" value="<%=root.getName()%>">
+                    </div>                 
                     <div class="col-12">
                         <label for="inputEmail4" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="<% out.println(root.getEmail());%>">
+                        <input type="email" class="form-control" id="inputEmail4" name="email" value="<%=root.getEmail() %>">
                       </div>
 
                     <div class="col-12">
                         <p>Add New Password</p>
-                      <label for="inputAddress2" class="form-label">Current Password</label>
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="">
-						
-                      <label for="inputAddress2" class="form-label">New Password</label>
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="">
+                            <hr class="my-4">
+                      <label for="curruntpass" class="form-label">Current  Password</label>
+                      <input type="password" class="form-control" id="curruntpass" onchange="checkPassword(event)">
+						<div id="passerror"  class="alert alert-danger pt-1 pb-1" role="alert" style="visibility: hidden;">Current Password Wrong </div>
+                      <label for="newpass" class="form-label">New Password</label>
+                      <input type="password" class="form-control" id="newpass" placeholder="" name="newpass" disabled required>
 
                     </div>
                  
@@ -106,7 +123,64 @@
 
 
 
+<script>
+//check password and confirm password match
+function checkPassword(event)
+{
+    var pass = document.getElementById("curruntpass").value;
+    var Cpass = document.getElementById("newpass");
+	let curruntPassword ="<%=root.getPassword()%>";
+   
 
+    if(pass !== "" )
+    
+    {
+
+        
+    if (pass !== curruntPassword){
+
+        event.preventDefault();
+        Cpass.disabled = true;
+        document.getElementById("passerror").style.visibility = "visible";
+        
+    
+        return false;
+    }
+    else if(pass === curruntPassword) {
+      
+       
+    	Cpass.disabled = false;
+    	document.getElementById("passerror").style.visibility = "hidden";
+        
+    }
+}
+
+}
+
+
+
+
+(function () {
+	  'use strict'
+
+	  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+	  var forms = document.querySelectorAll('.needs-validation')
+
+	  // Loop over them and prevent submission
+	  Array.prototype.slice.call(forms)
+	    .forEach(function (form) {
+	      form.addEventListener('submit', function (event) {
+	        if (!form.checkValidity()) {
+	          event.preventDefault()
+	          event.stopPropagation()
+	        }
+
+	        form.classList.add('was-validated')
+	      }, false)
+	    })
+	})()
+
+</script>
 
 
       

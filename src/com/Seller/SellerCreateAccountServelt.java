@@ -49,7 +49,7 @@ public class SellerCreateAccountServelt extends HttpServlet {
 		if(isTrue == true) {
 			request.setAttribute("isTrue", isTrue);
 			request.setAttribute("done", done);
-			RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("SellerLoginCreate.jsp");
 			dis.forward(request, response);
 			
 		}else {

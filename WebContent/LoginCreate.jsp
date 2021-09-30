@@ -5,9 +5,10 @@
     <%@page import="java.sql.Blob"%>
 <%@page import="java.io.OutputStream"%>
   <%@page import="com.Page.*"%>
+  <%@page import="com.Seller.*"%>
 
    <%
-   
+   Seller root1 = (Seller) request.getSession().getAttribute("root1");
      User root = (User) request.getSession().getAttribute("root");
     
     if(root != null){    

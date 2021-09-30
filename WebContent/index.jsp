@@ -106,11 +106,12 @@
 
     <div class="justify-content-lg-end col-8 col-lg-4 col-xl-3 mt-5 ms-5 col-sm-2">
             <div class="text-start">
-            <h1>Electronics</h1>
+            <h1>Clothes</h1>
             <p class="text text-muted mt-5" width="50px">
-                Electronics Definition – Electronics is the branch of science that deals with the study of flow and control of electrons (electricity) 
+                Cloth are items worn on the body. Typically, clothing is made of fabrics or textiles, but over time it has included garments made from animal skin and other thin sheets of materials and natural products found in the environment, put together.
+                 
             </p>
-            <button type="button" class="btn btn-outline-dark mt-5">Shop Now</button>
+              <a class="btn btn-outline-dark mt-5" href="Clothes" role="button" style="font-size: 15px; width: 150px;height: 40px;">Shop Now</a>	
             </div>
     </div>
 
@@ -135,7 +136,7 @@
                <div class="card-body">
           	<h5 class="card-title text-break fs-5"><%=items.getItemName() %></h5>
           <p class="card-text">$<%=items.getPrice() %></p>
-         <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=clothes" role="button" style="font-size: 10px; width: 100px;">Buy Now</a>	
+         <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=clothes" role="button" style="font-size: 15px; width: 100px;">Buy Now</a>	
         </div>
     </div>
     
@@ -156,9 +157,9 @@
             <div class="text-start">
             <h1>Electronics</h1>
             <p class="text text-muted mt-5" width="50px">
-                Electronics Definition – Electronics is the branch of science that deals with the study of flow and control of electrons (electricity) 
+                Electronic devices are components for controlling the flow of electrical currents for the purpose of information processing and system control
             </p>
-            <button type="button" class="btn btn-outline-dark mt-5">Shop Now</button>
+                <a class="btn btn-outline-dark mt-5" href="Electronics" role="button" style="font-size: 15px; width: 150px;height: 40px;">Shop Now</a>
             </div>
     </div>
 
@@ -183,7 +184,7 @@
                <div class="card-body">
           	<h5 class="card-title text-break fs-5"><%=items.getItemName() %></h5>
           <p class="card-text">$<%=items.getPrice() %></p>
-         <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=electronics" role="button" style="font-size: 10px; width: 100px;">Buy Now</a>	
+         <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=electronics" role="button" style="font-size: 15px; width: 100px;">Buy Now</a>	
         </div>
     </div>
     
@@ -202,11 +203,13 @@
 
     <div class="justify-content-lg-end col-8 col-lg-4 col-xl-3 mt-5 ms-5 col-sm-2">
             <div class="text-start">
-            <h1>Electronics</h1>
+            <h1>Sport</h1>
             <p class="text text-muted mt-5" width="50px">
-                Electronics Definition – Electronics is the branch of science that deals with the study of flow and control of electrons (electricity) 
+                 
+
+Sporting equipment, also called sporting goods, are the tools, materials, apparel, and gear used to compete in a sport and varies depending on the sport 
             </p>
-            <button type="button" class="btn btn-outline-dark mt-5">Shop Now</button>
+                <a class="btn btn-outline-dark mt-5" href="Sport" role="button" style="font-size: 15px; width: 150px;height: 40px;">Shop Now</a>
             </div>
     </div>
 
@@ -225,17 +228,13 @@
  
   
   %>
-    <div class="col">
+  <div class="col">
         <div class="card me-5 ms-5 p-1 mb-5">
-          <div class="card-image loading">
             <img  class="card-img-top" src="data:image/jpg;base64,<%=items.getImage1()%>" width="25%" height="25%"> 
-            </div>  
                <div class="card-body">
-          	<h5 class="card-title loading text-break fs-5"><%=items.getItemName() %></h5>
-          <p class="card-description loading">$<%=items.getPrice() %></p>
-            <div  class="btn placeholder bg-dark col-6 divbtn">
-         <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=sports" role="button" style="font-size: 10px; width: 100px;">Buy Now</a>	
-         </div>
+          	<h5 class="card-title text-break fs-5"><%=items.getItemName() %></h5>
+          <p class="card-text">$<%=items.getPrice() %></p>
+         <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=toy" role="button" style="font-size: 15px; width: 100px;">Buy Now</a>	
         </div>
     </div>
     
@@ -257,11 +256,11 @@
 
     <div class="justify-content-lg-end col-8 col-lg-4 col-xl-3 mt-5 ms-5 col-sm-2">
             <div class="text-start">
-            <h1>Electronics</h1>
+            <h1>Toys</h1>
             <p class="text text-muted mt-5" width="50px">
-                Electronics Definition – Electronics is the branch of science that deals with the study of flow and control of electrons (electricity) 
+                A toy is an item that is used primarily by children though may also be marketed to adults under certain circumstances. Playing with toys can be an enjoyable means of training young children for life experiences. 
             </p>
-            <button type="button" class="btn btn-outline-dark mt-5">Shop Now</button>
+            <a class="btn btn-outline-dark mt-5" href="Toys" role="button" style="font-size: 15px; width: 150px;height: 40px;">Shop Now</a>
             </div>
     </div>
 
@@ -286,7 +285,7 @@
                <div class="card-body">
           	<h5 class="card-title text-break fs-5"><%=items.getItemName() %></h5>
           <p class="card-text">$<%=items.getPrice() %></p>
-         <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=toy" role="button" style="font-size: 10px; width: 100px;">Buy Now</a>	
+         <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=toy" role="button" style="font-size: 15px; width: 100px;">Buy Now</a>	
         </div>
     </div>
     

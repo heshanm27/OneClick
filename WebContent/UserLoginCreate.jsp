@@ -76,12 +76,12 @@ Entered Email Already have A Account Please Use Email To Login
 <% String done = (String) request.getAttribute("done"); 
 
 
-if (done == "true"){
+if (done == "done"){
 	
 %>
 
     <div class="alert alert-info fs-4" role="alert">
- Account Successfully Created !!WelCome Buddy!!
+ Account Successfully Created !!WelCome!!
 </div>
 
 
@@ -102,19 +102,20 @@ Wrong Password Or Email Please Try Again
 <% }%>
      
         </div>
-        <form action="userLogin" method="post">
+        <form action="userLogin" class="needs-validation" method="post" novalidate>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label" required>Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="loginEmail">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="loginEmail" required>
+                 <div class="invalid-feedback"> Please Enter Valid Email </div>
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label" required>Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" name="LoginName">
+              <label for="mainPassword" class="form-label" required>Password</label>
+              <input type="password" class="form-control" id="mainPassword" name="LoginPass" required>
+               <div class="invalid-feedback"> Please Enter Password </div>
             </div>
             <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              <input type="checkbox" class="" id="exampleCheck1" onclick="showpass1()">
+              <label class="form-check-label" for="exampleCheck1">Show Password</label>
             </div>
            <center> <button type="submit" class="btn btn-primary ">Submit</button></center>
           </form>
@@ -132,22 +133,34 @@ Wrong Password Or Email Please Try Again
         <div class="container-fluid text-center h1">
             <h1 class="text-primary">Create Account</h1>
         </div>
-        <form action="Signup" method="post"> 
+        <form action="Signup" method="post" class="needs-validation" novalidate> 
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Name</label>
-                <input type="text" class="form-control" id="exampleInputPassword1" name="Name" required>
+                <label for="Name1" class="form-label">Name</label>
+                <input type="text" class="form-control" id="Name1" name="Name" required>
+                 <div class="invalid-feedback"> Please Enter Name </div>
             </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="Email" required>
-              <div id="emailHelp" class="form-text">Enter Valid Email</div>
+              <label for="InputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" name="Email" required>
+               <div class="invalid-feedback"> Please Enter Valid Email </div>
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" name="Pass" required>
+              <label for="Password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="Password" name="Pass" required>
+               <div class="invalid-feedback"> Please Enter Password </div>
+            </div>
+              <div class="mb-3">
+              <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="ConfirmPassword" name="" onchange="checkPassword(event)" required>
+               <div id="passerror"  class="alert alert-danger" role="alert" style="visibility: hidden;">Password and Confirm Password MissMatch </div>
+            </div>
+            <div class="mb-3 ms-4 form-check">
+              <input type="checkbox" class="form-check-input" id="agree" required>
+              <label class="form-check-label" for="agree">Agree Term And Condition</label>
+              <div class="invalid-feedback"> Need To be Agree With Condition </div>
             </div>
             <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+               <input type="checkbox" class="" id="exampleCheck1"  onclick="showpass()">
               <label class="form-check-label" for="exampleCheck1">Show Password</label>
             </div>
           <center>  <button type="submit" class="btn btn-primary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="${isTrue}">Submit</button></center>
@@ -163,6 +176,100 @@ Wrong Password Or Email Please Try Again
 </div>
 
 </div>
+<script>
+//check password and confirm password match
+function checkPassword(event)
+{
+    var pass = document.getElementById("Password").value;
+    var Cpass = document.getElementById("ConfirmPassword").value;
+   
+    
 
+    if(Cpass !== "" )
+    
+    {
+
+        
+    if (pass !== Cpass){
+
+        event.preventDefault();
+        document.getElementById("passerror").style.visibility = "visible";
+        
+    
+        return false;
+    }
+    else if(pass == Cpass) {
+      
+       
+        
+    	document.getElementById("passerror").style.visibility = "hidden";
+        
+    }
+}
+
+}
+
+//show password function
+
+function showpass(){
+
+	var pass = document.getElementById("Password");
+    var Cpass = document.getElementById("ConfirmPassword");
+   
+
+
+    if(pass.type === "password"){
+
+
+        pass.type="text";
+        Cpass.type="text";
+    }else{
+
+        pass.type="password";
+        Cpass.type="password";
+    }
+
+}
+function showpass1(){
+
+    const pass = document.getElementById("mainPassword");
+   
+
+
+    if(pass.type === "password"){
+
+
+        pass.type="text";
+        
+    }else{
+
+        pass.type="password";
+     
+    }
+
+}
+
+
+(function () {
+	  'use strict'
+
+	  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+	  var forms = document.querySelectorAll('.needs-validation')
+
+	  // Loop over them and prevent submission
+	  Array.prototype.slice.call(forms)
+	    .forEach(function (form) {
+	      form.addEventListener('submit', function (event) {
+	        if (!form.checkValidity()) {
+	          event.preventDefault()
+	          event.stopPropagation()
+	        }
+
+	        form.classList.add('was-validated')
+	      }, false)
+	    })
+	})()
+
+</script>
 </body>
 </html>
