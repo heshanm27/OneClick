@@ -64,9 +64,8 @@
 %>
 <% 
     
-  for(Electronics items:item){
+  for(product items:item){
   
- 
   
   %>
     

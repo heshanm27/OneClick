@@ -1,8 +1,9 @@
 package com.Update;
 
 import items.Electronics;
+import items.product;
 
-public class GetDetailsClass extends Electronics {
+public class GetDetailsClass extends product {
 
 	public GetDetailsClass() {
 		super();

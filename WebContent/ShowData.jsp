@@ -81,7 +81,7 @@ Successfully Item Has been Updated
 <% 
 
 	if(result.isEmpty() != true){
-  for(Electronics items:result){
+  for(product items:result){
 	 
 	
 %>
