@@ -1,13 +1,13 @@
 package com.Seller;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.Page.DBConnection;
 import com.Page.User;
+import com.mysql.jdbc.PreparedStatement;
 
 public class SellerDbUtill {
 
@@ -115,6 +115,7 @@ public class SellerDbUtill {
 		
 	}
 
+
 	public  static boolean   Update(int id,String name,String Email,String Password,String address,String country) {
 		
 		boolean isSuccess = false;
@@ -125,7 +126,7 @@ public class SellerDbUtill {
 		
 		
 			String sql1 = " UPDATE seller  SET Name = ?,Address = ?,Country = ?, Email = ?,Password = ? WHERE SID=?";
-			prStatement = con.prepareStatement(sql1);
+			prStatement = (PreparedStatement) con.prepareStatement(sql1);
 
 			prStatement.setString(1,name);
 			prStatement.setString(2,address);

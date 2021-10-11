@@ -50,7 +50,7 @@
         </div>
             
             <%}else{%>
-        		 <a class="btn btn-primary" href="LoginType.jsp" role="button">Log In<span style="padding-left: 15px" ><i class="material-icons">login</i></span></a>
+        		 <a class="btn btn-primary" href="LoginType.jsp" role="button"><span style="padding-right: 15px" >Log In<i class="material-icons ms-3">login</i></span></a>
         		<%} %>
         		 
 

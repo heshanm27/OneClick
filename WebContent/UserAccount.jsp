@@ -9,6 +9,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<title>Insert title here</title>
 <%@include file="/includes/head.jsp"%>
 </head>
 <body>
@@ -83,7 +84,7 @@ SomeThing went wrong
 
 
 
-                <form class="row g-3 needs-validation" action="UserUpdate" method="post"  novalidate>
+                <form class="row g-3 needs-validation" action="UserUpdate" method="post" novalidate>
                     <div class="col-12">
                       <label for="inputEmail4" class="form-label">Name</label>
                       <input type="text" class="form-control" id="inputEmail4" name="name" value="<%=root.getName()%>">
