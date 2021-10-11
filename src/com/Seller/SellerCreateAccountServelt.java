@@ -42,14 +42,13 @@ public class SellerCreateAccountServelt extends HttpServlet {
 		boolean isTrue = false;
 		
 		String nsame= "used";
-		String done = "true";
+		String done = "done";
 		isTrue = SellerDbUtill.SellerCreateAccount(name, email,address,Country,pass);
 		
 	
 		if(isTrue == true) {
-			request.setAttribute("isTrue", isTrue);
 			request.setAttribute("done", done);
-			RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("SellerLoginCreate.jsp");
 			dis.forward(request, response);
 			
 		}else {

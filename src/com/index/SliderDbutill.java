@@ -94,14 +94,10 @@ public class SliderDbutill {
 	                el.setImage3(base64Image[2]);
 	                
 	                item.add(el);
-	       
-	              
-	                
-			
-				
 				
 				
 			}
+			con.close();
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -281,6 +277,7 @@ public  static List<Sport> FindSport() {
 			
 			
 		}
+		con.close();
 		
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
@@ -372,7 +369,7 @@ try {
 		
 		
 	}
-	
+	con.close();
 } catch (SQLException e) {
 	// TODO Auto-generated catch block
 	e.printStackTrace();

@@ -39,7 +39,7 @@ public class userLoginServelt extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		String email = request.getParameter("loginEmail");
-		String pass = request.getParameter("LoginName");
+		String pass = request.getParameter("LoginPass");
 		
 		
 		 User user =UserDbUtill.Loginvalidate(email, pass);

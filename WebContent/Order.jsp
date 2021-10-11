@@ -27,7 +27,6 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
 <%@include file="/includes/head.jsp"%>
 </head>
 <body>
@@ -84,7 +83,7 @@
       
       <div class="col-12 bg-secondary align-content-center text-white text-center p-5"   style="height: 200px;" > 
        <div>
-    <p class="fs-3 text"style="display:inline-flex;">Price -:$</p>
+    <p class="fs-3 text"style="display:inline-flex;">Price -:Rs.</p>
     <p class="fs-3 text" id="Price" style="display:inline-flex;">  <%=item.getPrice() %></p>
   </div>
         <button class="w-50 btn btn-primary btn-lg" type="submit">Continue to checkout</button>

@@ -26,7 +26,6 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
 <%@include file="/includes/head.jsp"%>
 </head>
 <body>
@@ -39,7 +38,7 @@
 
           <form class=" mt-5 mb-5 w-75" action="Search" method="get">
             <div class="input-group  ">
-              <input type="text" class="form-control" placeholder="Searh" aria-label="Recipient's username" aria-describedby="basic-addon2" name="Search">
+              <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" name="Search">
               <input type="hidden" name="cat" value="sports"/>
               <span class="input-group-text bg-light" id="basic-addon2"><button type="submit" class="btn btn-primary"><span style="padding-right: 15px" ><i class="material-icons">search</i></span>Search</button></span>
             </div>
@@ -53,7 +52,7 @@
       
       
       
-       <div class="row row-cols-1 row-cols-4 me-5 ms-5 mt-5 mb-5">
+       <div class="row row-cols-1 row-cols-4 me-5 ms-5 mt-5" style="margin-bottom:200px">
        
   
           <%
@@ -79,8 +78,8 @@
             <img class="ms-5"src="data:image/jpg;base64,<%=items.getImage1()%>" width="60%" height="60%">
                 <div class="card-body">
           	<h5 class="card-title text-break fs-5"><%=items.getItemName() %></h5>
-          <p class="card-text">$<%=items.getPrice() %></p>
-        <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=sports" role="button" style="font-size: 10px; width: auto;">Buy Now</a>	
+          <p class="card-text">Rs.<%=items.getPrice() %></p>
+        <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=sports" role="button" style="font-size: 15px; width: auto;">Buy Now</a>	
         </div>
           </div>
         </div>

@@ -67,7 +67,6 @@ margin-top: -100px;
 
 .btn {
 position: relative;
-width: 20vh;
 text-indent: 0px;
 }
 
@@ -125,27 +124,15 @@ display: block;
 background-color: tomato !important;
 }
 
-.carousel-item{
-  height: 32rem;
-  background-color:black;
-  color: white;
-  position: relative;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  background-position: center;
-  background-size: cover;
 
-}
-@media only screen and (min-width : 1200px) {
-  .carousel-caption
-  {
-    top: 46%;
-  }
-}
+ 
+<!--footer-->
 
-
-
+     .text-muted:hover{
+      color:white !important;
+    }
+  .row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;}
 
       

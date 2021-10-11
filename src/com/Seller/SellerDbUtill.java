@@ -1,6 +1,7 @@
 package com.Seller;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -114,7 +115,51 @@ public class SellerDbUtill {
 		
 	}
 
+	public  static boolean   Update(int id,String name,String Email,String Password,String address,String country) {
+		
+		boolean isSuccess = false;
+		con =DBConnection.getConnetion();
+	      PreparedStatement prStatement;
+	
+		try {
+		
+		
+			String sql1 = " UPDATE seller  SET Name = ?,Address = ?,Country = ?, Email = ?,Password = ? WHERE SID=?";
+			prStatement = con.prepareStatement(sql1);
 
+			prStatement.setString(1,name);
+			prStatement.setString(2,address);
+			prStatement.setString(3,country);
+			prStatement.setString(4,Email);
+			prStatement.setString(5,Password);
+			prStatement.setInt(6,id);
+		
+			
+            
+			System.out.println(prStatement);
+			
+			int rs1 =prStatement.executeUpdate();
+			
+				if(rs1 > 0) {
+				
+				isSuccess=true;
+				}
+				con.close();
+			
+			}
+			
+			catch (SQLException e) {
+				
+				System.out.println(e.getMessage());
+			}
+			
+			
+		
+		
+		
+		return isSuccess;
+	}
+		
 	
 	
 	
