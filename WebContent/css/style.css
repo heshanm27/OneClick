@@ -134,5 +134,25 @@ background-color: tomato !important;
   .row {
     --bs-gutter-x: 0;
     --bs-gutter-y: 0;}
+}
 
+  <style>
+.nav-link {
+    display: block;
+    padding: 1rem  2rem;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 10px;
+
+}
+.nav-item {
+    display:inline-block;
+  vertical-align: 5px;
+}
+
+ul li a.active{
+    background: #00b5de;
+    color:#fff;
+}
+  </style>
       

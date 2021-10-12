@@ -148,7 +148,7 @@ public  static List<search> Search(String like,String Cat) {
 			}
 			else if(Cat.equals("toy") == true)  {
 				
-				sql="SELECT * FROM toy WHERE TTile LIKE '%"+like+"%'";
+				sql="SELECT * FROM toy WHERE ToyName LIKE '%"+like+"%'";
 				
 			}
 			

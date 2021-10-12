@@ -19,5 +19,19 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet">
+   
     <!-- Font Awesome cdn -->
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  
+  <style>
+  ul li a.active{
+    background: #0d6efd;
+    color:#fff;
+    border-radius: 10px;
+}
+
+ul li a.active:hover{
+   background-color: white;
+
+}
+  </style>

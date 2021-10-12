@@ -9,7 +9,6 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
 <%@include file="/includes/head.jsp"%>
 </head>
 <body>
@@ -145,8 +144,7 @@ SomeThing went wrong
 
 
 
-                <form class="row g-3 needs-validation" action="SellerUpdate" method="post" novalidate>
-                
+                <form class="row g-3" action="SellerUpdate" method="post">
                     <div class="col-12">
                       <label for="inputEmail4" class="form-label">Name</label>
                       <input type="text" class="form-control" id="inputEmail4" name="name" value="<%=root1.getName()%>">
@@ -171,7 +169,7 @@ SomeThing went wrong
                       <input type="password" class="form-control" id="curruntpass" onchange="checkPassword(event)">
 						<div id="passerror"  class="alert alert-danger pt-1 pb-1" role="alert" style="visibility: hidden;">Current Password Wrong </div>
                       <label for="newpass" class="form-label">New Password</label>
-                      <input type="password" class="form-control" id="newpass" placeholder="" name="newpass" disabled required>
+                      <input type="password" class="form-control" id="newpass" placeholder="" name="newpass" disabled>
 
                     </div>
                  

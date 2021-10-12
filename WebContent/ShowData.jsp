@@ -148,15 +148,15 @@ Successfully Item Has been Updated
         <div class="row">
         <div class="photo-input col-4">
             <p>Choose Image 1</p>
-            <input type="file" id="loadFile" onchange="console.log(this.files[0].name);" name="image1"/> 
+            <input type="file" id="loadFile" onchange="console.log(this.files[0].name);" name="image1" required/> 
          </div>
          <div class="photo-input justify-content-center col-4">
             <p>Choose Image 2</p>
-            <input type="file" id="loadFile" onchange="console.log(this.files[0].name);" name="image2"/> 
+            <input type="file" id="loadFile" onchange="console.log(this.files[0].name);" name="image2" required/> 
          </div>
          <div class="photo-input col-4">
             <p>Choose Image 3</p>
-            <input type="file" id="loadFile" onchange="console.log(this.files[0].name);" name="image3"/> 
+            <input type="file" id="loadFile" onchange="console.log(this.files[0].name);" name="image3" required/> 
          </div> 
         </div> 
         <div class="row">

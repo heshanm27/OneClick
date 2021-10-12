@@ -101,7 +101,7 @@ public class PayServelt extends HttpServlet {
 						dis.forward(request, response);
 					}else if(cat.equals("clothes") == true) {
 						System.out.println("Clothes");
-						goType= "Cloths";
+						goType= "Clothes";
 						request.setAttribute("Details", goType);
 						RequestDispatcher dis = request.getRequestDispatcher("thx.jsp");
 						dis.forward(request, response);

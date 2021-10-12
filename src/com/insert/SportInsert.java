@@ -5,6 +5,7 @@ import java.io.InputStream;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +20,7 @@ import items.itemsDButill;
 /**
  * Servlet implementation class SportInsert
  */
+@MultipartConfig(maxFileSize = 16177215)
 @WebServlet("/SportInsert")
 public class SportInsert extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -47,6 +49,7 @@ public class SportInsert extends HttpServlet {
 		doGet(request, response);
 		
 
+	
 		
 		System.out.println("eletronic inset");
 		   String ItemName = request.getParameter("Name");

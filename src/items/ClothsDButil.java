@@ -165,7 +165,7 @@ public class ClothsDButil {
 		try {
 		
 		
-			String sql1 = " UPDATE clothes  SET Name = ?, Title = ?,Discription = ?,Price=?,Image1=?,Image1=?,Image3=? WHERE EID=?";
+			String sql1 = " UPDATE clothes  SET ItemName = ?, Title = ?,Discription = ?,Price=?,C_Image1=?,C_Image2=?,C_Image3=? WHERE EID=?";
 			prStatement = con.prepareStatement(sql1);
 
 			prStatement.setString(1,name);
@@ -221,7 +221,7 @@ public class ClothsDButil {
 		try {
 		
 		
-			String sql1 = "insert into clothes "+"(Name,Title,Discription,Price,Image1,Image2,Image3,SID)"+ " values (?,?,?,?,?,?,?,?)";
+			String sql1 = "insert into clothes "+"(ItemName,Title,Discription,Price,C_Image1,C_Image2,C_Image3,UID)"+ " values (?,?,?,?,?,?,?,?)";
 			prStatement = con.prepareStatement(sql1);
 
 			prStatement.setString(1,name);
