@@ -20,7 +20,7 @@
 	 response.sendRedirect("SellerLoginCreate.jsp");
  	
  }
-
+System.out.print(request.getParameter("Cat"));
     %>
     
 
@@ -47,7 +47,7 @@ Successfully Item Has been Inserted
     <div class="row  align-item justify-content-center  ">
 	<h1 class="text-center">Add Items</h1>
 
-                 <form action="<%=request.getParameter("Cat") %> " method="post"  enctype="multipart/form-data" class="row g-3 needs-validation" novalidate >
+                 <form action="<%=request.getParameter("Cat")%>" method="post"  enctype="multipart/form-data" class="row g-3 needs-validation" novalidate >
                     <div class="col-12">
                       <label for="inputEmail4" class="form-label">ItemName</label>
                       <input type="text" class="form-control" id="inputEmail4" name="Name" placeholder="" required>

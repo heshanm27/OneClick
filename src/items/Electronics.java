@@ -5,7 +5,6 @@ import java.io.ByteArrayInputStream;
 
 import javax.imageio.ImageIO;
 
-import sun.misc.BASE64Decoder;
 
 public class Electronics extends  product {
 

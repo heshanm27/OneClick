@@ -161,7 +161,7 @@ public class ToysDBUtill {
 		try {
 		
 		
-			String sql1 = " UPDATE toy  SET Name = ?, Title = ?,Discription = ?,Price=?,Image1=?,Image1=?,Image3=? WHERE EID=?";
+			String sql1 = " UPDATE toy  SET ToyName = ?, TTile = ?,TDescription = ?,TPrice=?,T_Image1=?,T_Image2=?,T_Image3=? WHERE EID=?";
 			prStatement = con.prepareStatement(sql1);
 
 			prStatement.setString(1,name);
@@ -217,7 +217,7 @@ public class ToysDBUtill {
 		try {
 		
 		
-			String sql1 = "insert into toy "+"(Name,Title,Discription,Price,Image1,Image2,Image3,SID)"+ " values (?,?,?,?,?,?,?,?)";
+			String sql1 = "insert into toy "+"(ToyName,TTile,TDescription,TPrice,T_Image1,T_Image2,T_Image3,SID)"+ " values (?,?,?,?,?,?,?,?)";
 			prStatement = con.prepareStatement(sql1);
 
 			prStatement.setString(1,name);
