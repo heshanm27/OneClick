@@ -1,6 +1,6 @@
 package items;
 
-public class Toys extends Electronics {
+public class Toys extends product {
 
 	public Toys() {
 		super();

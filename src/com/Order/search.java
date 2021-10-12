@@ -7,8 +7,9 @@ import javax.servlet.RequestDispatcher;
 import items.Electronics;
 import items.Sport;
 import items.SportDBUtill;
+import items.product;
 
-public class search extends  Electronics{
+public class search extends product{
 
 	public search() {
 		super();

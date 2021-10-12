@@ -1,5 +1,6 @@
 package com.Page;
 
+import java.io.InputStream;
 import java.sql.*;
 
 
@@ -115,6 +116,49 @@ public class UserDbUtill {
 
 
 
+	public  static boolean   Update(int id,String name,String Email,String Password) {
+	
+		boolean isSuccess = false;
+		con =DBConnection.getConnetion();
+	      PreparedStatement prStatement;
+	
+		try {
+		
+		
+			String sql1 = " UPDATE user  SET Name = ?, Email = ?,Password = ? WHERE User_Id=?";
+			prStatement = con.prepareStatement(sql1);
+
+			prStatement.setString(1,name);
+			prStatement.setString(2,Email);
+			prStatement.setString(3,Password);
+			prStatement.setInt(4,id);
+		
+			
+            
+			System.out.println(prStatement);
+			
+			int rs1 =prStatement.executeUpdate();
+			
+				if(rs1 > 0) {
+				
+				isSuccess=true;
+				}
+				con.close();
+			
+			}
+			
+			catch (SQLException e) {
+				
+				System.out.println(e.getMessage());
+			}
+			
+			
+		
+		
+		
+		return isSuccess;
+	}
+		
 
 
 

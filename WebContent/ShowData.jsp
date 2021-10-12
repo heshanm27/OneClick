@@ -12,7 +12,6 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
 <%@include file="/includes/head.jsp"%>
 </head>
 <body>
@@ -82,7 +81,7 @@ Successfully Item Has been Updated
 <% 
 
 	if(result.isEmpty() != true){
-  for(Electronics items:result){
+  for(product items:result){
 	 
 	
 %>
@@ -91,7 +90,7 @@ Successfully Item Has been Updated
                 <td><%=items.getTitle() %></td>
                 <td><%=items.getItemDetails() %></td>
              
-                    <td><%=items.getPrice() %></td>
+                    <td>Rs.<%=items.getPrice() %></td>
                 <td><img src="data:image/jpg;base64,<%=items.getImage1()%>" style="width: 75%; height: 25%;"></td>
                 <td><img src="data:image/jpg;base64,<%=items.getImage2()%>" style="width: 75%; height: 25%;"></td>
                 <td><img src="data:image/jpg;base64,<%=items.getImage3()%>" style="width: 75%; height: 25%;"></td>

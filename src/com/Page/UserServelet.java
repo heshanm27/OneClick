@@ -39,14 +39,14 @@ public class UserServelet extends HttpServlet {
 		boolean isTrue = false;
 		
 		String nsame= "used";
-		String done = "true";
+		String done = "done";
 		isTrue = UserDbUtill.CreateAccount(name, email, pass);
 		
 	
 		if(isTrue == true) {
-			request.setAttribute("isTrue", isTrue);
+			
 			request.setAttribute("done", done);
-			RequestDispatcher dis = request.getRequestDispatcher("index.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("UserLoginCreate.jsp");
 			dis.forward(request, response);
 			
 		}else {

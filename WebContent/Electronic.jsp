@@ -26,7 +26,6 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
 <%@include file="/includes/head.jsp"%>
 </head>
 <body>
@@ -53,7 +52,7 @@
       
       
       
-       <div class="row row-cols-1 row-cols-4 me-5 ms-5 mt-5 mb-5">
+       <div class="row row-cols-1 row-cols-4 me-5 ms-5 mt-5" style="margin-bottom:200px"> 
        
  
           <%
@@ -65,9 +64,8 @@
 %>
 <% 
     
-  for(Electronics items:item){
+  for(product items:item){
   
- 
   
   %>
     
@@ -79,8 +77,8 @@
             <img src="data:image/jpg;base64,<%=items.getImage1()%>" width="75%" height="75%">
                 <div class="card-body">
           	<h5 class="card-title text-break fs-5"><%=items.getItemName() %></h5>
-          <p class="card-text">$<%=items.getPrice() %></p>
-            <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=electronics" role="button" style="font-size: 10px; width: auto;">Buy Now</a>	
+          <p class="card-text">Rs.<%=items.getPrice() %></p>
+            <a class="btn btn-outline-dark mt-2" href="Orders?ID=<%=items.getItemID() %>&cat=electronics" role="button" style="font-size: 15px; width: auto;">Buy Now</a>	
         </div>
           </div>
         </div>

@@ -14,7 +14,8 @@ import javax.servlet.http.Part;
 
 import com.Seller.Seller;
 
-import items.itemsDButill;
+
+import items.*;
 
 /**
  * Servlet implementation class UpdateServelt
@@ -87,20 +88,25 @@ public class UpdateServelt extends HttpServlet {
 		   
 		   System.out.println(Title);
 		   System.out.println(inputStream1);
+		   
 		   boolean isSucess=false;
+		   
+		   
 		   if(Cat.equals("electronics") == true) {
+			   
 		   isSucess = itemsDButill.Update(ID,ItemName, Title, Description,Price, inputStream1, inputStream2, inputStream3);
+		   
 		   }else if(Cat.equals("clothes") == true) {
 			   
-			   isSucess = itemsDButill.Update(ID,ItemName, Title, Description,Price, inputStream1, inputStream2, inputStream3);
+			   isSucess = ClothsDButil.Update(ID,ItemName, Title, Description,Price, inputStream1, inputStream2, inputStream3);
 			   
 		   }else if(Cat.equals("sports") == true) {
 			   
-			   isSucess = itemsDButill.Update(ID,ItemName, Title, Description,Price, inputStream1, inputStream2, inputStream3);
+			   isSucess = SportDBUtill.Update(ID,ItemName, Title, Description,Price, inputStream1, inputStream2, inputStream3);
 			   
 		   }else if(Cat.equals("Toy") == true){
 			   
-			   isSucess = itemsDButill.Update(ID,ItemName, Title, Description,Price, inputStream1, inputStream2, inputStream3);
+			   isSucess = ToysDBUtill.Update(ID,ItemName, Title, Description,Price, inputStream1, inputStream2, inputStream3);
 		   }
 		   
 		  System.out.println(isSucess);  

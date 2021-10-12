@@ -27,7 +27,6 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
 <%@include file="/includes/head.jsp"%>
 </head>
 <body>
@@ -70,16 +69,24 @@
     </div>
     <div class="col-6 bg-light p-3 mt-5" style="height: 500px;">
       <h1><%=item.getTitle() %></h1>
-      <form class="mt-5 text-center">
+      <form class="mt-5 text-center" action="Pay.jsp"  method="get">
         <div class="input-group mb-3 w-50">
           <span class="input-group-text">Quantity</span>
-          <input type="number" class="form-control" aria-label="Quantity Between(1-8)" min="1" max="5" value="1">
+          <input type="number" id="qty" class="form-control"  min="1"  value="1" name="qty" id="qty" onchange="pricecal()">
+          <input type="hidden" id="tot" name="tot" value="<%=item.getPrice() %>">
+            <input type="hidden" id="iid" name="mID" value="<%=item.getItemID() %>">
+              <input type="hidden" id="cat" name="cat" value="<%=request.getParameter("cat") %>">
+               <input type="hidden" id="itemname" name="itemName" value="<%=item.getItemName()%>">
+                <input type="hidden" id="normalPrice" name="normalPrice" value="<%=item.getPrice()%>">
           <span class="input-group-text"></span>
         </div>
       
       <div class="col-12 bg-secondary align-content-center text-white text-center p-5"   style="height: 200px;" > 
-        <p class="fs-3 text">Price -<%=item.getPrice() %></p>
-        <a class="btn btn-primary" href="submit" role="button">Buy It Now</a>
+       <div>
+    <p class="fs-3 text"style="display:inline-flex;">Price -:Rs.</p>
+    <p class="fs-3 text" id="Price" style="display:inline-flex;">  <%=item.getPrice() %></p>
+  </div>
+        <button class="w-50 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
       </div>
     </div>
   </form>
@@ -100,6 +107,25 @@
      
 
 
+<script>
+    function pricecal(){
+
+var qty = document.getElementById("qty").value;
+let price=  <%=item.getPrice()%>;
+let total
+let p=parseInt(price);
+let fixprice=p;
+if(p <= 1000000){
+ total=(qty * p);
+ document.getElementById("Price").innerHTML = total;
+ document.getElementById("tot").value = total;
+}else{
+  exit();
+}
+
+
+}
+</script>
 
 
 
